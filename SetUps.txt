@@ -1,0 +1,14 @@
+1. Install NodeJS and npm.
+2. Install Visual Studio Code
+3. Install React from Terminal:
+             a: npm install -g create-react-app
+             b: create-react-app --version
+             c: create-react-app projectname
+
+npm install bootstrap@4  --save
+npm install -S react-router-dom
+npm install react-responsive-carousel --save
+
+
+RBAC+SPA
+
