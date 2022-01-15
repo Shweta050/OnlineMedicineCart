@@ -3,7 +3,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 //routes
-const authRoutes= require('../routes/auth');
+const userRoutes= require('../routes/userAuth');
+// const sellerRoutes= require('../routes/sellerAuth');
+// const adminRoutes= require('../routes/adminAuth');
 
 
 //Environment Variable
@@ -33,5 +35,7 @@ mongoose.connect(
     console.log('Error connecting to MongoDB : ' + err);
 });
 app.use(bodyParser.json());
-app.use("/", authRoutes);
+app.use("/", userRoutes);
+// app.use("/seller", sellerRoutes);
+// app.use("/", adminRoutes);
 

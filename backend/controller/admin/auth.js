@@ -1,10 +1,10 @@
-const User = require("../models/user");
+const User = require("../../models/admin");
 
 exports.signup = (req, res) => {
     User.findOne({ email: req.body.email }).exec(async (error, user) => {
       if (user)
         return res.status(400).json({
-          error: "User already registered",
+          error: "Admin already registered",
         });
   
       const { name, email, password, phone, role } = req.body;
@@ -46,7 +46,7 @@ exports.signup = (req, res) => {
     }).then(result => {
         if (result.length > 0) {
             res.status(200).json({
-                message: 'User logged in Successfully !!',
+                message: 'Admin logged in Successfully !!',
                 isLoggedIn: true,
                 user: result[0]
             });
