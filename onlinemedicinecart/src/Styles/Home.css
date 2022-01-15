@@ -1,0 +1,38 @@
+
+.imageText {
+    position: absolute;
+    top: 100px;
+    text-align: center;
+    width: 100%;
+}
+
+.logo {
+    width: 99px;
+    height: 99px;
+    font-family: Poppins;
+    font-size: 66px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.51;
+    letter-spacing: normal;
+    text-align: left;
+    color: #eb2929;
+    border-radius: 50%;
+    background: white;
+    text-align: center;
+    margin: auto;
+}
+
+.headerText {
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.53;
+    letter-spacing: normal;
+    text-align: left;
+    color: white;
+    text-align: center;
+}
