@@ -4,27 +4,13 @@ import '../Styles/Home.css';
 import Wallpaper from './Wallpaper';
 import Footer from './Footer';
 import Navbar from './Navbar';
+import Category from './Category';
 
 export default class Home extends Component {
-    constructor() {
-        super();
-        this.state ={
-            wallpaper: [],
-            footer: [],
-            navbar: [],
-            error: {}
+    render(){
+return(
+    <><Navbar/><Wallpaper /><Category/><Footer /></>
+);
+}
+}
 
-        }
-}
-render() {
-    const { wallpaper, navbar, footer} = this.state;
-    return (
-        <React.Fragment>
-            <Wallpaper wallpaperData={wallpaper} />
-            <Footer footerData={footer}/>
-            <Navbar navbarData={navbar}/>
-            
-        </React.Fragment>
-    )
-}
-}

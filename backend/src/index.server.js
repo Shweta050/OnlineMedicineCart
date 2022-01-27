@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const userRoutes= require('../routes/userAuth');
 const userControllerRoutes= require('../controller/user/user.controller');
 const categoryRoutes= require('../controller/category/category');
-// const adminRoutes= require('../routes/adminAuth');
+const productRoutes= require('../controller/product/product');
 
 
 //Environment Variable
@@ -16,6 +16,13 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const uri = process.env.ATLAS_URI;
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
 
 mongoose.connect(
     uri,
@@ -39,5 +46,5 @@ app.use(bodyParser.json());
 app.use("/", userRoutes);
 app.use("/user", userControllerRoutes);
 app.use("/category", categoryRoutes);
-// app.use("/", adminRoutes);
+app.use("/product", productRoutes);
 

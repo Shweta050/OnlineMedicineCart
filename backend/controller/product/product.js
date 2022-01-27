@@ -1,6 +1,12 @@
-// const express = require('express');
-// const router = express.Router();
-// const Product = require("../../models/product");
+const express = require('express');
+const router = express.Router();
+const Product = require("../../models/product");
+
+router.route('/').get((req,res)=>{
+    Product.find() 
+    .then(Product => res.json(Product))
+    .catch(err => res.status(400).json('Error: ' + err));
+      });
 
 // router.route('/add').post((req, res) => {
 //     const name = req.body.name;
@@ -31,3 +37,5 @@
 //       .then(() => res.json('Product added!'))
 //       .catch(err => res.status(400).json('Error: ' + err));
 //   });
+
+module.exports = router;

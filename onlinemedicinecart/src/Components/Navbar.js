@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from "../Assets/home1.jpg";
 import {
   Nav,
   NavLink,
@@ -7,6 +8,7 @@ import {
   NavBtn,
   NavBtnLink,
 } from './NavbarElements';
+import SearchBar from './SearchBar';
   
 const Navbar = () => {
   return (
@@ -15,29 +17,24 @@ const Navbar = () => {
         <Bars />
   
         <NavMenu>
-          <NavLink to='/home' activeStyle>
+        <img src={require('../Assets/logo.jpg')} alt="logo" className='logo'/>
+          <NavLink to='/home'>
             Home
           </NavLink>
-          <NavLink to='/aboutus' activeStyle>
-            AboutUs
-          </NavLink>
-          <NavLink to='/medicines' activeStyle>
-            Medicines
-          </NavLink>
-          <NavLink to='/delivery' activeStyle>
-            Delivery
-          </NavLink>
-          <NavLink to='/ourservice' activeStyle>
-            Our Service
-          </NavLink>
-          <NavLink to='/contact' activeStyle>
-            Contact
+          <SearchBar/>
+          <NavLink to='/home'>
+            SignUp
+          </NavLink >
+          <NavLink to='/home'>
+            Login
           </NavLink>
         </NavMenu>
         <NavBtn>
           <NavBtnLink to='/cart'>Cart</NavBtnLink>
         </NavBtn>
       </Nav>
+      
+      
     </>
   );
 };
