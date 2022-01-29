@@ -15,9 +15,9 @@ class Router extends Component {
             <Routes>
                 <Route exact path="/" element={<Home/>}  />
                 <Route path="/home" element={<Home/>}  />
-                <Route path='/signup' component={Signup} />
-                <Route path='/login' component={Login} />
-                <Route path='/cart' component={Cart} />
+                <Route path="/signup" element={<Signup/>} />
+                <Route path="/login" element={<Login/>} />
+                <Route path="/cart" element={<Cart/>} />
 
             </Routes>
             </BrowserRouter>
