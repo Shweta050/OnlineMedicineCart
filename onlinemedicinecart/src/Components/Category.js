@@ -1,40 +1,51 @@
-import React, { Component } from 'react';
+import React, { Component,useEffect,useState } from 'react';
 import ReactDOM from 'react-dom';
 import {Route, withRouter} from 'react-router-dom';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.css';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+//
+//https://jsonplaceholder.typicode.com/users
+export default function Category(){
 
-class Category extends Component {
-    constructor() {
-        super();
-        this.state = {
-            categories: [],
-        };
+    const [value,setValue]=useState('');
+    const [result,getData]= useState([]);
+    useEffect(()=>
+    {
+        fetch('http://localhost:5000/category',
+        {
+            method:'GET',
+            headers:{
+                'content-type':'application/json',
+
+            }
+        }).then(resp=>resp.json())
+        .then(resp=>getData(resp))
+    },[])
+    const handleSelect=(e)=>{
+      console.log(e);
+      setValue(e)
     }
-
-
-    componentDidMount() {
-        let initialCategory= [];
-        fetch(`http://localhost:5000/category`)
-        .then(response => {
-            return response.json();
-        }).then(data => {
-            initialCategory = data.results.map((category) => {
-            return category
-        });
-        console.log(initialCategory);
-        this.setState({
-            categories: initialCategory,
-        });
-    });
-}
-
-  render() {
     
     return( 
-        <Category state={this.state}/>
+        <><DropdownButton
+            alignRight
+            title={"--"+value+"--"}
+            id="dropdown-menu-align-right"
+            onSelect={handleSelect}
+        >
+            {
+                result.map(items=>
+                    {
+                        return(
+                            <Dropdown.Item eventKey={items.name}>{items.name}</Dropdown.Item>
+                        );
+                })
+            }
+        </DropdownButton><h4>You selected {value}</h4></>
     );
-  }
+  
 }
-  export default Category;
 
 
