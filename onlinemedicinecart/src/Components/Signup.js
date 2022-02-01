@@ -3,6 +3,7 @@ import Navbar from './Navbar'
 import axios from "axios";
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { Button, TextField, Link } from '@material-ui/core';
 
 const Signup = () => {
 
@@ -28,11 +29,11 @@ const Signup = () => {
         if( name && email && password && phone){
             axios.post("http://localhost:5000/signup", user)
             .then( res => {
-                alert(res.data.message)
+                alert("Successfully Signed Up!! Login now")
                 navigate('/login')
             })
         } else {
-            alert("invlid input")
+            alert("Please fill all the fields")
         }
         
     }
@@ -40,16 +41,27 @@ const Signup = () => {
     return (
       <>
       <Navbar/>
-        <div className="register">
+        <div className="register" style={{ marginTop: '100px'}}>
             {console.log("User", user)}
-            <h1>SignUp</h1>
-            <input type="text" name="name" value={user.name} placeholder="Your Name" onChange={ handleChange }></input>
-            <input type="text" name="email" value={user.email} placeholder="Your Email" onChange={ handleChange }></input>
-            <input type="password" name="password" value={user.password} placeholder="Your Password" onChange={ handleChange }></input>
-            <input type="password" name="phone" value={user.phone} placeholder="Your Phone Number" onChange={ handleChange }></input>
-            <div className="button" onClick={register} >Sign Up</div>
-            <div>or</div>
-            <div className="button" onClick={() => navigate('/login')}>Login</div>
+            <h1 style={{ marginTop: '100px'}}>SignUp</h1>
+            <input type="text" name="name" value={user.name} placeholder="Your Name" onChange={ handleChange }></input><br/>
+            <input type="text" name="email" value={user.email} placeholder="Your Email" onChange={ handleChange }></input><br/>
+            <input type="password" name="password" value={user.password} placeholder="Your Password" onChange={ handleChange }></input><br/>
+            <input type="text" name="phone" value={user.phone} placeholder="Your Phone Number" onChange={ handleChange }></input>
+            <br/><Button
+            className="button_style"
+            variant="contained"
+            color="primary"
+            size="small"
+            onClick={register}
+          >SignUp</Button><span> or </span>
+            <Button
+            className="button_style"
+            variant="contained"
+            color="primary"
+            size="small"
+            onClick={() => navigate('/login')}
+          >Login</Button>
         </div>
         <Footer/>
         </>
