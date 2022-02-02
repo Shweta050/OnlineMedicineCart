@@ -15,8 +15,7 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-const uri = process.env.ATLAS_URI;
-
+//const uri = process.env.ATLAS_URI;
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
@@ -25,9 +24,9 @@ app.use((req, res, next) => {
 });
 
 mongoose.connect(
-    uri,
+    'mongodb+srv://Shweta:12345@cluster0.ryxyo.mongodb.net/OnlineMedicalCart?retryWrites=true&w=majority',
     {
-        useNewUrlParser: true,
+        useNewUrlParser: false,
         useUnifiedTopology: true
     }
 ).then(success => {
