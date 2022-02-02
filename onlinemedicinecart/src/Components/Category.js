@@ -43,7 +43,7 @@ export default function Category(){
                         );
                 })
             }
-        </DropdownButton><h4>You selected {value}</h4></>
+        </DropdownButton><h4> {  value  }</h4></>
     );
   
 }
