@@ -6,6 +6,7 @@ import Home from './Components/Home';
 import Signup from './Components/Signup';
 import Login from './Components/Login';
 import Cart from './Components/Cart';
+import ProductDetails from './Components/Catalog/ProductDetails';
 
 class Router extends Component {
 
@@ -18,7 +19,8 @@ class Router extends Component {
                 <Route path="/signup" element={<Signup/>} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/cart" element={<Cart/>} />
-
+                <Route path="/product/:id" element={<ProductDetails/>} />
+{console.log("Router here")}
             </Routes>
             </BrowserRouter>
         );
