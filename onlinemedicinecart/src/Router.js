@@ -6,6 +6,9 @@ import Home from './Components/Home';
 import Signup from './Components/Signup';
 import Login from './Components/Login';
 import Cart from './Components/Cart';
+import UserHomepage from './Components/UserHomepage';
+import SellerHomepage from './Components/SellerHomepage';
+import AdminHomepage from './Components/AdminHomepage';
 
 class Router extends Component {
 
@@ -18,6 +21,9 @@ class Router extends Component {
                 <Route path="/signup" element={<Signup/>} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/cart" element={<Cart/>} />
+                <Route path="/userhome" element={<UserHomepage/>}/>
+                <Route path="/sellerhome" element={<SellerHomepage/>}/>
+                <Route path="/adminhome" element={<AdminHomepage/>}/>
 
             </Routes>
             </BrowserRouter>

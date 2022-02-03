@@ -1,40 +1,45 @@
-import React, { Component } from 'react';
-import { Button, TextField, Link } from '@material-ui/core';
+import React,{useState} from 'react'
+import axios from 'axios';
+import {useNavigate} from "react-router-dom"
 import Navbar from './Navbar';
 import Footer from './Footer';
-import '../Styles/Login.css'
-const axios = require('axios');
+import { TextField, Link, Button } from '@material-ui/core';
 
+const Login = ({setLoginUser}) => {
+const navigate = useNavigate()
+    const [user,setUser] = useState({
+        name:"",
+        password: ""
+    })
+    const handleChange = e =>{
+    const {name,value} = e.target
+    setUser({
+    ...user,//spread operator 
+    [name]:value
+    })
+    }
 
-export default class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: ''
-    };
-  }
-
-  onChange = (e) => this.setState({ [e.target.name]: e.target.value });
-
-  login = () => {
-
-    axios.post('http://localhost:5000/login', {
-      email: this.state.email,
-      password: this.state.password,
-    }).then((res) => {
-      alert("Successful login!!");
-      console.log(res.name);
+    const login =()=>{
+        axios.post("http://localhost:5000/Login",user)
+        .then(function(res){
+      const role=res.data.user.role;
+      if(role ==='user'){
+       navigate('/userhome');
+      }
+      else if(role ==='seller'){
+        navigate('/sellerhome');
+      }
+      else{
+        navigate('/adminhome');
+      }
     }).catch((err) => {
         alert("Invalid Email ID or password")
     });
-  }
-
-  render() {
+	}
     return (
-        <>
+         <>
         <Navbar/>
-      <div style={{ marginTop: '100px' }}>
+      <div style={{ marginTop: '100px', marginLeft: '480px' }}>
         <div>
           <h2>Login</h2>
         </div>
@@ -45,8 +50,8 @@ export default class Login extends React.Component {
             type="text"
             autoComplete="off"
             name="email"
-            value={this.state.email}
-            onChange={this.onChange}
+            value={user.email}
+            onChange={handleChange}
             placeholder="Email ID"
             required
           />
@@ -56,8 +61,8 @@ export default class Login extends React.Component {
             type="password"
             autoComplete="off"
             name="password"
-            value={this.state.password}
-            onChange={this.onChange}
+            value={user.password}
+            onChange={handleChange}
             placeholder="Password"
             required
           />
@@ -67,8 +72,8 @@ export default class Login extends React.Component {
             variant="contained"
             color="primary"
             size="small"
-            disabled={this.state.name == '' && this.state.password == ''}
-            onClick={this.login}
+            // disabled={user.name == '' && user.password == ''}
+            onClick={login}
           >
             Login
           </Button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -79,6 +84,6 @@ export default class Login extends React.Component {
       </div>
       <Footer/>
       </>
-    );
-  }
+    )
 }
+export default Login
