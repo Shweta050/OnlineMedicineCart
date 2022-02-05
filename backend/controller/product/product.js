@@ -3,7 +3,19 @@ const router = express.Router();
 const Product = require("../../models/product");
 
 router.route('/').get((req,res)=>{
-    Product.find() 
+  Product.find() 
+  .then(Product => res.json(Product))
+  .catch(err => res.status(400).json('Error: ' + err));
+    });
+
+router.route('/:id').get((req,res)=>{
+Product.find({_id:req.params.id}) 
+.then(Product => res.json(Product))
+.catch(err => res.status(400).json('Error: ' + err));
+  });
+
+router.route('/:name').get((req,res)=>{
+    Product.findOne({name:req.params.name}) 
     .then(Product => res.json(Product))
     .catch(err => res.status(400).json('Error: ' + err));
       });

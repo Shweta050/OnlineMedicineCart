@@ -1,4 +1,6 @@
 import { Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, ListItem, ListItemAvatar, ListItemText, Typography } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import {Route, withRouter} from 'react-router-dom';
 
 export default function ProductCard(product)
 {
@@ -32,7 +34,7 @@ export default function ProductCard(product)
         </CardContent>
         <CardActions>
           <Button size="small">Add to Cart</Button>
-          <Button size="small">View</Button>
+          <Button component={Link} to={`/product/${product.product._id}`} size="small">View</Button>
         </CardActions>
       </Card> 
     // <ListItem key={product.product._id}>
