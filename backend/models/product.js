@@ -14,51 +14,57 @@ const productSchema = new Schema(
         },
         price: {
             type: Number,
-            required: true,
+            required: true
         },
         categoryid: {
             type: Number,
-            required: true
+            required: false
         },
         companyid: {
             type: Number,
-            required: true,
+            required: false
         },
         brandid: {
             type: Number,
-            required: true
+            required: false
 
           },
           sellerid: {
             type: Number,
-            required: true
+            required: false
 
           },
           quantity: {
             type: Number,
-            required: true
+            required: false
 
           },
           rating: {
             type: Number,
-            required: true
+            required: false
 
           },
           status: {
             type: String,
-            required: true
+            required: false
 
           },
           reviews: {
             type: String,
-            required: true
+            required: false
 
           },
           pictureUrl: {
             type: String,
             required: false
 
-          }
+          },
+          createdAt: {
+            type: Date,
+            default: Date.now(),
+            select: false,
+            required:false
+          },
     }
 );
 
