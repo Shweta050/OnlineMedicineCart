@@ -17,6 +17,7 @@ export const fetchProductsAsync = createAsyncThunk(
     async (_, thunkAPI) => {
         const params = getAxiosParams(thunkAPI.getState().catalog.productParams);
         try {
+            console.log(params)
             const response = await agent.Catalog.list(params);
             thunkAPI.dispatch(setMetaData(response.metaData));
             return response.items;
@@ -51,7 +52,7 @@ export const fetchProductAsync = createAsyncThunk(
 function initParams() {
     return {
         sort: 'name',
-        filter: 'category',
+        category: 'Others',
         page: 1,
         limit:3
     }

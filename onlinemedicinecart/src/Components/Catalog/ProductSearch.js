@@ -1,7 +1,7 @@
 import { debounce, TextField } from "@mui/material";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setProductParams } from "./catalogSlice";
+import { setProductParams } from "./CatalogSlice";
 
 export default function ProductSearch() {
     const {productParams} = useSelector(state => state.catalog);

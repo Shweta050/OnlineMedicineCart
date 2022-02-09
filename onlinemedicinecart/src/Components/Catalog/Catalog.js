@@ -2,7 +2,7 @@ import { Checkbox,FormControl, FormControlLabel, FormGroup, FormLabel, Grid, Pap
 import Pagination from '@mui/material/Pagination';
 import Category from '../Category';
 import ProductList from './ProductList'
-
+import ProductSearch from './ProductSearch';
 
 const sortOptions = [
     { value: 'name', label: 'Alphabetical' },
@@ -29,6 +29,7 @@ export default function Catalog(props)
                     </FormGroup>
                 </Paper> */}
                 < Category />
+                <ProductSearch></ProductSearch>
                 <Paper sx={{ mb: 2, p: 2 }}>
                     <FormControl>
                     <RadioGroup>

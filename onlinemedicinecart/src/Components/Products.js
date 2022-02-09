@@ -3,12 +3,13 @@ import Catalog from "./Catalog/Catalog";
 import Typography from '@material-ui/core/Typography'
 import Header from "./Layout/header";
 import { Container, CssBaseline } from "@material-ui/core";
+import {  useSelector } from "react-redux";
+import productSelectors from "./Catalog/CatalogSlice"
 
 function Products(props)
 {
     const [products,setProducts] = useState([ 
 ])
-
     useEffect(()=>
     {
         console.log(props)

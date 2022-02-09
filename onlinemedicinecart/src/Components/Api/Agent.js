@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 
 const sleep = () => new Promise(resolve => setTimeout(resolve, 500));
 
-axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+axios.defaults.baseURL = 'https://localhost:5000';
 axios.defaults.withCredentials = true;
 
 const responseBody = (response) => response.data;

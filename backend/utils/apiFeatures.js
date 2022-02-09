@@ -14,7 +14,7 @@ class APIFeatures {
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
 
     this.query = this.query.find(JSON.parse(queryStr));
-    this.query.find( { name: { $regex: /^{ABC}/i } } )
+  //  this.query.find( { name: { $regex: /^{ABC}/i } } )
 
 
     return this;

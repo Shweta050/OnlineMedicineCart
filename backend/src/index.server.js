@@ -25,6 +25,7 @@ app.use((req, res, next) => {
 
 mongoose.connect(
     'mongodb://127.0.0.1:27017/OnlineMecineCart',
+    // 'mongodb+srv://Shweta:12345@cluster0.ryxyo.mongodb.net/OnlineMedicalCart?retryWrites=true&w=majority',
     {
         useNewUrlParser: false,
         useUnifiedTopology: true
