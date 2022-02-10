@@ -1,18 +1,21 @@
-import { Divider, Grid, Table, TableBody, TableCell, TableContainer, TableRow, TextField, Typography } from "@material-ui/core";
-import { useEffect } from "react";
+import { Button, Divider, Grid, List, Table, TableBody, TableCell, TableContainer, TableRow, TextField, Typography } from "@material-ui/core";
+import {useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch,useSelector } from "react-redux";
 import { listProductDetails } from "../../actions/productActions";
+import history from '../../history'
 
 export default function ProductDetails()
 {
+    console.log(history)
     const dispatch = useDispatch();
+
+    const [qty, setQty] = useState(1)
 
     const productDetails = useSelector(state=>state.productDetails)
     const {loading,product} = productDetails
     const {id} = useParams();
-    console.log(product)
-
+    
     useEffect(()=>
     {
         // axios.get(`http://localhost:5000/product/${id}`)
@@ -22,6 +25,11 @@ export default function ProductDetails()
         dispatch(listProductDetails(id))
 
     },[dispatch,id])   
+
+    const addToCartHandler = () => {
+        console.log('herein add to cart')
+        history.push(`/cart/${id}?qty=${qty}`)
+      }
 
     return(
         // <Typography variant='h2'>
@@ -65,20 +73,37 @@ export default function ProductDetails()
                                </TableBody>
                            </Table>
                        </TableContainer>
-                       <Grid container spacing={2}>
+                       {/* <Grid container spacing={2}>
                            <Grid item xs={6}>
-                               {/* <TextField 
+                               <TextField 
                                    variant='outlined'
                                    type='number'
                                    label='Quantity in Cart'
                                    fullWidth
                                    value={quantity}
                                    onChange={handleInputChange}
-                               /> */}
-                           </Grid>
-       
-                       </Grid>
+                               />
+                           </Grid> */}      
+                       {/* </Grid> */}
+                       <List>
+                       <TextField 
+                                   variant='outlined'
+                                   type='number'
+                                   label='Quantity in Cart'
+                                   fullWidth
+                                   value={product[0].countInStock}
+                               />   
+                        <Button
+                        onClick={addToCartHandler}
+                        className='btn-block'
+                        type='button'
+                        disabled={product.countInStock === 0}
+                        >
+                        Add To Cart
+                        </Button>
+                    </List>
                    </Grid>
+
                </Grid>
         )}
 

@@ -7,11 +7,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import history from './history'
 
 ReactDOM.render(
   <React.StrictMode>
       <Provider store={store}>
-        <Router />
+        <Router history={history} />
       </Provider>,
   </React.StrictMode>,
   document.getElementById('root')
