@@ -30,7 +30,7 @@ export default function ProductDetails()
         //   {/* {console.log(product[0].name)} */}
         // </Typography>
         <>
-        {loading ?  <h1>Loading..</h1>:(
+        {loading === undefined || loading?  <h1>Loading..</h1>:(
                     <Grid container spacing={6}>
                     <Grid item xs={6}>
                         <img src={product[0].image} alt={product[0].name} style={{width: '100%'}} />
