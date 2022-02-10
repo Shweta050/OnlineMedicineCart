@@ -1,12 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require("cors")
+
 
 //routes
 const userRoutes= require('../routes/userAuth');
 const userControllerRoutes= require('../controller/user/user.controller');
 const categoryRoutes= require('../controller/category/category');
 const productRoutes= require('../controller/product/product');
+const cartRoutes= require('../controller/cart/cart');
 
 
 //Environment Variable
@@ -23,8 +26,22 @@ app.use((req, res, next) => {
     next();
 });
 
+const whitelist = ["http://localhost:3000"]
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error("Not allowed by CORS"))
+    }
+  },
+  credentials: true,
+}
+
+app.use(cors(corsOptions))
+
 mongoose.connect(
-    'mongodb://127.0.0.1:27017/OnlineMecineCart',
+    'mongodb://127.0.0.1:27017/OnlineMedicineShop',
     // 'mongodb+srv://Shweta:12345@cluster0.ryxyo.mongodb.net/OnlineMedicalCart?retryWrites=true&w=majority',
     {
         useNewUrlParser: false,
@@ -47,4 +64,8 @@ app.use("/", userRoutes);
 app.use("/user", userControllerRoutes);
 app.use("/category", categoryRoutes);
 app.use("/product", productRoutes);
+app.use("/product:", productRoutes);
+
+app.use("/cart", cartRoutes);
+
 

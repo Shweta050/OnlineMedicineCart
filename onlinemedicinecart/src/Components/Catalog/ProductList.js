@@ -4,19 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function ProductList(props)
 {
-    const { productsLoaded } = useSelector(state => state.catalog);
 
     return(
         <Grid container spacing={4}>
                 {console.log(props.products)}    
         {props.products.map(item=>(
             <Grid item xs={4}>
-                                
-                        {!productsLoaded ? (
-                            <ProductCard key = {item._id} product={item} />
-                        ) : (
-                            <ProductCard  />
-                        )}
+                        { 
+                            <ProductCard key = {item._id} product={item} />                
+                        }
             </Grid>
         )
 

@@ -10,8 +10,8 @@ import { setProductParams } from "./Catalog/CatalogSlice";
 //https://jsonplaceholder.typicode.com/users
 export default function Category(){
 
-    const {productParams} = useSelector(state => state.catalog);
-    const [categoryTerm, setCategory] = useState(productParams.category);
+    // const {productParams} = useSelector(state => state.catalog);
+    // const [categoryTerm, setCategory] = useState(productParams.category);
     const dispatch = useDispatch();
 
     const [value,setValue]=useState('');
@@ -33,9 +33,9 @@ export default function Category(){
       setValue(e)
     }
 
-    const debouncedSearch = debounce((event) => {
-        dispatch(setProductParams({categoryTerm: event.target.value}))
-    }, 1000)
+    // const debouncedSearch = debounce((event) => {
+    //     dispatch(setProductParams({categoryTerm: event.target.value}))
+    // }, 1000)
     
     return( 
         <><DropdownButton
@@ -44,14 +44,14 @@ export default function Category(){
             id="dropdown-menu-align-right"
             onSelect={handleSelect}
             onChange={(event) => {
-                setCategory(event.target.value);
+                // setCategory(event.target.value);
             }}
         >
             {
                 result.map(items=>
                     {
                         return(
-                            <Dropdown.Item eventKey={items.name}>{categoryTerm}</Dropdown.Item>
+                            <Dropdown.Item eventKey={items.name}>{items.value}</Dropdown.Item>
                         );
                 })
             }

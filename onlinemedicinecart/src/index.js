@@ -6,14 +6,13 @@ import Router from './Router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { store } from './Store/ConfigureStore';
-
+import { store } from './store';
 
 ReactDOM.render(
   <React.StrictMode>
       <Provider store={store}>
         <Router />
-      </Provider>
+      </Provider>,
   </React.StrictMode>,
   document.getElementById('root')
 );

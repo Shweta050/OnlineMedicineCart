@@ -1,7 +1,7 @@
 const express = require('express');
 const req = require('express/lib/request');
 const router = express.Router();
-const Product = require("../../models/product");
+const Product = require("../../models/productModel");
 const APIFeatures = require('../../utils/apiFeatures');
 
 

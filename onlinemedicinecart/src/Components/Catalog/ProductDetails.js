@@ -1,25 +1,29 @@
 import { Divider, Grid, Table, TableBody, TableCell, TableContainer, TableRow, TextField, Typography } from "@material-ui/core";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch,useSelector } from "react-redux";
+import { listProductDetails } from "../../actions/productActions";
+// import {Loader} from '../Loader'
+// import {Message} from '../Message'
 
 export default function ProductDetails()
 {
+    const dispatch = useDispatch();
+
+    const productDetails = useSelector(state=>state.productDetails)
+    const {loading,error,product} = productDetails
     const {id} = useParams();
-    const [product,setProduct] = useState([]);
-    const [loading,setLoading] = useState(true);
+   console.log(id);
 
     useEffect(()=>
     {
-        axios.get(`http://localhost:5000/product/${id}`)
-        .then(resp=>setProduct(resp.data))
-        .catch(err=>console.log(err))
-        .finally(()=>setLoading(false))
-    },[id])   
+        // axios.get(`http://localhost:5000/product/${id}`)
+        // .then(resp=>setProduct(resp.data))
+        // .catch(err=>console.log(err))
+        // .finally(()=>setLoading(false))
+        dispatch(listProductDetails(id))
 
-    if (loading) return <h3>Loading...</h3>
-
-    if(!product) return <h3>Product not found</h3>
+    },[dispatch,id])   
 
     return(
         // <Typography variant='h2'>
@@ -27,14 +31,16 @@ export default function ProductDetails()
         //   {/* {product[0].name} */}
         //   {/* {console.log(product[0].name)} */}
         // </Typography>
-        <Grid container spacing={6}>
+        <>
+        {loading? <h1>Loading..</h1>: error? <h2>{error}</h2>:(   
+                 <Grid container spacing={6}>
              <Grid item xs={6}>
-                 <img src={product[0].pictureUrl} alt={product[0].name} style={{width: '100%'}} />
+                 <img src={product[0].image} alt={product[0].name} style={{width: '100%'}} />
             </Grid>
             <Grid item xs={6}>
                 <Typography variant='h3'>{product[0].name}</Typography>
                 <Divider sx={{mb: 2}} />
-                <Typography variant='h4' color='secondary'>{(product[0].price).toFixed(2)} Rupees</Typography>
+                <Typography variant='h4' color='secondary'>{(product[0].price)} Rupees</Typography>
                 <TableContainer>
                     <Table>
                         <TableBody>
@@ -43,20 +49,20 @@ export default function ProductDetails()
                                 <TableCell>{product[0].name}</TableCell>
                             </TableRow>    
                             <TableRow>
-                                <TableCell>Review</TableCell>
-                                <TableCell>{product[0].reviews}</TableCell>
+                                <TableCell>Description</TableCell>
+                                <TableCell>{product[0].description}</TableCell>
                             </TableRow>  
                             <TableRow>
                                 <TableCell>Category</TableCell>
-                                <TableCell>{product[0].categoryid}</TableCell>
+                                <TableCell>{product[0].category}</TableCell>
                             </TableRow>  
                             <TableRow>
                                 <TableCell>Brand</TableCell>
-                                <TableCell>{product[0].brandid}</TableCell>
+                                <TableCell>{product[0].brand}</TableCell>
                             </TableRow>  
                             <TableRow>
                                 <TableCell>Quantity in stock</TableCell>
-                                <TableCell>{product[0].quantity}</TableCell>
+                                <TableCell>{product[0].countInStock}</TableCell>
                             </TableRow>  
                         </TableBody>
                     </Table>
@@ -75,6 +81,8 @@ export default function ProductDetails()
 
                 </Grid>
             </Grid>
-        </Grid>
+        </Grid>)}
+        </>
+
     )
 }
