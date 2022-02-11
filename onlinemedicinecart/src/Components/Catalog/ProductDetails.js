@@ -1,4 +1,4 @@
-import { Button, Divider, FormControl, Grid, GridList, List, Table, TableBody, TableCell, TableContainer, TableRow, TextField, Typography } from "@material-ui/core";
+import { Box, Button, Divider, FormControl, Grid, GridList, List, MenuItem, Table, TableBody, TableCell, TableContainer, TableRow, TextField, Typography } from "@material-ui/core";
 import {useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch,useSelector } from "react-redux";
@@ -6,14 +6,22 @@ import { listProductDetails } from "../../actions/productActions";
 import history from '../../history'
 import { withRouter } from 'react-router-dom';
 import { FormControlLabel } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
 
 export default function ProductDetails()
 {
+//// 
+let navigate = useNavigate();
+let [error, setError] = useState(null);
+////
     console.log(history)
     const dispatch = useDispatch();
 
     const [qty, setQty] = useState(1)
 
+    const handleChange = (event) => {
+        setQty(event.target.value);
+    };
     const productDetails = useSelector(state=>state.productDetails)
     const {loading,product} = productDetails
     const {id} = useParams();
@@ -30,129 +38,104 @@ export default function ProductDetails()
 
     const addToCartHandler = () => {
         console.log('herein add to cart')
-        history.push(`/cart/${id}?qty=${qty}`)
+       navigate(`/cart/${id}?qty=${qty}`)
       }
 
-    return(
-        // <Typography variant='h2'>
-          
-        //   {/* {product[0].name} */}
-        //   {/* {console.log(product[0].name)} */}
-        // </Typography>
-        <>
-        {loading === undefined || loading?  <h1>Loading..</h1>:(
-                    <Grid container spacing={6}>
-                    <Grid item xs={6}>
-                        <img src={product[0].image} alt={product[0].name} style={{width: '100%'}} />
-                   </Grid>
-                   <Grid item xs={6}>
-                       <Typography variant='h3'>{product[0].name}</Typography>
-                       <Divider sx={{mb: 2}} />
-                       <Typography variant='h4' color='secondary'>{(product[0].price)} Rupees</Typography>
-                       <TableContainer>
-                           <Table>
-                               <TableBody>
-                                   <TableRow>
-                                       <TableCell>Name</TableCell>
-                                       <TableCell>{product[0].name}</TableCell>
-                                   </TableRow>    
-                                   <TableRow>
-                                       <TableCell>Description</TableCell>
-                                       <TableCell>{product[0].description}</TableCell>
-                                   </TableRow>  
-                                   <TableRow>
-                                       <TableCell>Category</TableCell>
-                                       <TableCell>{product[0].category}</TableCell>
-                                   </TableRow>  
-                                   <TableRow>
-                                       <TableCell>Brand</TableCell>
-                                       <TableCell>{product[0].brand}</TableCell>
-                                   </TableRow>  
-                                   <TableRow>
-                                       <TableCell>Quantity in stock</TableCell>
-                                       <TableCell>{product[0].countInStock}</TableCell>
-                                   </TableRow>  
-                               </TableBody>
-                           </Table>
-                       </TableContainer>
-                       {/* <Grid container spacing={2}>
-                           <Grid item xs={6}>
-                               <TextField 
-                                   variant='outlined'
-                                   type='number'
-                                   label='Quantity in Cart'
-                                   fullWidth
-                                   value={quantity}
-                                   onChange={handleInputChange}
-                               />
-                           </Grid> */}      
-                       {/* </Grid> */}
-                       <List>
-                       {/* <TextField 
-                                   variant='outlined'
-                                   type='number'
-                                   label='Quantity in Cart'
-                                   fullWidth
-                                   value={product[0].countInStock}
-                               />    */}
- 
-                    {product[0].countInStock > 0 && (
-                    <List>
-                      <Grid>
-                        <Table>
-                            <TableBody>
-                                <TableRow>
-                                        <TableCell>Quantity in stock</TableCell>
-                                        <TableCell>
-                                            <FormControl>
-                                            <FormControlLabel value={qty} onClick={(e) => setQty(e.target.value)}/>
-                                            {[...Array(product.countInStock).keys()].map(
-                                                (x) => (
-                                                    <option key={x + 1} value={x + 1}>
-                                                    {x + 1}
-                                                    </option>
-                                                )
-                                                )}
-                                            </FormControl>
-                                        </TableCell>
+    return (
+      // <Typography variant='h2'>
 
-                                </TableRow>
-                            </TableBody>
-                        </Table>
-                        {/* <Col>Qty</Col>
-                        <Col>
-                          <Form.Control
-                            as='select'
-                            value={qty}
-                            onChange={(e) => setQty(e.target.value)}
-                          >
-                            {[...Array(product.countInStock).keys()].map(
+      //   {/* {product.name} */}
+      //   {/* {console.log(product.name)} */}
+      // </Typography>
+      <>
+        {loading === undefined || loading ? (
+          <h1>Loading..</h1>
+        ) : (
+          <Grid container spacing={6}>
+            <Grid item xs={6}>
+              <img
+                src={product.image}
+                alt={product.name}
+                style={{ width: "100%" }}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <Typography variant="h3">{product.name}</Typography>
+              <Divider sx={{ mb: 2 }} />
+              <Typography variant="h4" color="secondary">
+                {product.price} Rupees
+              </Typography>
+              <TableContainer>
+                <Table>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell>Name</TableCell>
+                      <TableCell>{product.name}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Description</TableCell>
+                      <TableCell>{product.description}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Category</TableCell>
+                      <TableCell>{product.category}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Brand</TableCell>
+                      <TableCell>{product.brand}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Quantity in stock</TableCell>
+                      <TableCell>{product.countInStock}</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+              <Box
+                component="form"
+                sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                noValidate
+                autoComplete="off"
+              >
+                <div>
+                  <TextField
+                    id="outlined-select-currency"
+                    select
+                    label="Select"
+                    value={qty}
+                    onChange={handleChange}
+                    helperText="Please select your quantity"
+                  >
+                    {/* {currencies.map((option) => (
+                      <MenuItem key={option.value} value={option.value}>
+                        {option.label}
+                      </MenuItem>
+                    ))} */}
+                     {[...Array(product.countInStock).keys()].map(
                               (x) => (
                                 <option key={x + 1} value={x + 1}>
                                   {x + 1}
                                 </option>
                               )
                             )}
-                          </Form.Control>
-                        </Col> */}
-                      </Grid>
-                    </List>
-                  )}                                  
-                        <Button
-                        onClick={addToCartHandler}
-                        className='btn-block'
-                        type='button'
-                        disabled={product.countInStock === 0}
-                        >
-                        Add To Cart
-                        </Button>
-                    </List>
-                   </Grid>
+                  </TextField>
+                </div>
+              </Box>
+              <List>
 
-               </Grid>
+                <Button
+                  className="btn-block"
+                  type="button"
+                  variant="contained"
+                  onClick={addToCartHandler}
+                  disabled={product.countInStock === 0}
+                >
+                  Add To Cart
+                </Button>
+              </List>
+            </Grid>
+          </Grid>
         )}
-
-        </>
-
-    )
+      </>
+    );
 }

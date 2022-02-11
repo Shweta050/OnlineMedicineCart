@@ -4,11 +4,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import Message from '../Message'
 import { addToCart, removeFromCart } from '../../actions/cartActions'
+import { useNavigate } from 'react-router-dom';
 
 const CartScreen = () => {
-  const productId = useParams();
+  const productId = useParams().id;
   const { search } = useLocation();
 
+  let navigate = useNavigate();
 
   const qty = search ? Number(search.split('=')[1]) : 1
 
@@ -27,9 +29,10 @@ const CartScreen = () => {
     dispatch(removeFromCart(id))
   }
 
-  // const checkoutHandler = () => {
-  //   history.push('/login?redirect=shipping')
-  // }
+  const checkoutHandler = () => {
+    navigate(`/cart/${productId}?qty=${qty}`)
+
+  }
 
   return (
     <Row>
@@ -71,10 +74,11 @@ const CartScreen = () => {
                   <Col md={2}>
                     <Button
                       type='button'
-                      variant='light'
-                      onClick={() => removeFromCartHandler(item.product)}
+                      variant='dark'
+                      onClick={() => removeFromCartHandler(item.product)}                      
                     >
                       <i className='fas fa-trash'></i>
+                      Remove
                     </Button>
                   </Col>
                 </Row>

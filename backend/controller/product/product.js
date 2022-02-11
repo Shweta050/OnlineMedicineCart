@@ -22,7 +22,7 @@ const APIFeatures = require('../../utils/apiFeatures');
             });
 
       router.route('/:id').get((req,res)=>{
-        Product.find({_id:req.params.id}) 
+        Product.findById({_id:req.params.id}) 
         .then(Product => res.json(Product))
         .catch(err => res.status(400).json('Error: ' + err));
           });
