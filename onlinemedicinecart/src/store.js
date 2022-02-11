@@ -10,7 +10,7 @@ import {
   // productReviewCreateReducer,
   // productTopRatedReducer,
 } from './reducers/productReducers'
-// import { cartReducer } from './reducers/cartReducers'
+import { cartReducer } from './reducers/cartReducers'
 // import {
 //   userLoginReducer,
 //   userRegisterReducer,
@@ -31,13 +31,13 @@ import {
 
 const reducer = combineReducers({
   productList: productListReducer,
-  productDetails: productDetailsReducer
+  productDetails: productDetailsReducer,
   // productDelete: productDeleteReducer,
   // productCreate: productCreateReducer,
   // productUpdate: productUpdateReducer,
   // productReviewCreate: productReviewCreateReducer,
   // productTopRated: productTopRatedReducer
-  // cart: cartReducer,
+  cart: cartReducer,
   // userLogin: userLoginReducer,
   // userRegister: userRegisterReducer,
   // userDetails: userDetailsReducer,
