@@ -5,7 +5,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
 import Signup from './Components/Signup';
 import Login from './Components/Login';
-import Cart from './Components/Cart';
 import CartScreen from './Components/Screens/CartScreen';
 
 import ProductDetails from './Components/Catalog/ProductDetails';
