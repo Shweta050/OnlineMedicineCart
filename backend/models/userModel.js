@@ -2,7 +2,7 @@
 // import bcrypt from 'bcryptjs'
 
 const mongoose = require('mongoose');
-const bcrpt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 
 const userSchema = mongoose.Schema(
   {
@@ -23,16 +23,21 @@ const userSchema = mongoose.Schema(
       type: Number,
       required: true,
       unique: true
-  },
-  role: {
+    },
+   role: {
       type: String,
       enum: ["user", "admin", "seller"],
       default: "user",
-    }
+    },
+  isAdmin:{
+    type: Boolean,
+    required: true,
+    default: false,
   },
-  {
-    timestamps: true,
-  }
+},
+{
+  timestamps: true,
+}
 )
 
 userSchema.methods.matchPassword = async function (enteredPassword) {
