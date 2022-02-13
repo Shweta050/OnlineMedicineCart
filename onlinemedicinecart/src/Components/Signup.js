@@ -1,13 +1,21 @@
 import Footer from './Footer'
 import Navbar from './Navbar'
 import axios from "axios";
-import React, { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import React, { useState, useEffect } from "react"
+import { useNavigate, useLocation } from "react-router-dom"
 import { Button, TextField, Link } from '@material-ui/core';
+import { useDispatch, useSelector } from 'react-redux';
+import { register } from '../actions/userActions';
 
 const Signup = () => {
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const userRegister = useSelector(state=> state.userRegister)
+  const {loading, error, userInfo} = userRegister
+  const redirect = location.search ? location.search.split('=')[1]:'/'
 
     const [ user, setUser] = useState({
         name: "",
@@ -23,20 +31,31 @@ const Signup = () => {
             [name]: value
         })
     }
-
-    const register = () => {
-        const { name, email, password, phone } = user
-        if( name && email && password && phone){
-            axios.post("http://localhost:5000/signup", user)
-            .then( res => {
-                alert("Successfully Signed Up!! Login now")
-                navigate('/login')
-            })
-        } else {
-            alert("Please fill all the fields")
-        }
+    useEffect(()=>
+    {
+      if(userInfo)
+      {
+        navigate(redirect)
+      }
+    },[navigate,userInfo,redirect])
+    /////
+      const signup =()=>{
+        console.log('signup handle')
+        dispatch(register(user.name,user.email,user.phone,user.password))
+      }
+    // const register = () => {
+    //     const { name, email, password, phone } = user
+    //     if( name && email && password && phone){
+    //         axios.post("http://localhost:5000/signup", user)
+    //         .then( res => {
+    //             alert("Successfully Signed Up!! Login now")
+    //             navigate('/login')
+    //         })
+    //     } else {
+    //         alert("Please fill all the fields")
+    //     }
         
-    }
+    // }
 
     return (
       <>
@@ -54,7 +73,7 @@ const Signup = () => {
             variant="contained"
             color="primary"
             size="small"
-            onClick={register}
+            onClick={signup}
           >SignUp</Button>
           <span> or </span>
             <Button

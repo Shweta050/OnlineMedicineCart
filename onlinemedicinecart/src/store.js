@@ -11,15 +11,15 @@ import {
   // productTopRatedReducer,
 } from './reducers/productReducers'
 import { cartReducer } from './reducers/cartReducers'
-// import {
-//   userLoginReducer,
-//   userRegisterReducer,
+import {
+  userLoginReducer,
+  userRegisterReducer,
 //   userDetailsReducer,
 //   userUpdateProfileReducer,
 //   userListReducer,
 //   userDeleteReducer,
 //   userUpdateReducer,
-// } from './reducers/userReducers'
+} from './reducers/userReducers'
 // import {
 //   orderCreateReducer,
 //   orderDetailsReducer,
@@ -38,8 +38,8 @@ const reducer = combineReducers({
   // productReviewCreate: productReviewCreateReducer,
   // productTopRated: productTopRatedReducer
   cart: cartReducer,
-  // userLogin: userLoginReducer,
-  // userRegister: userRegisterReducer,
+  userLogin: userLoginReducer,
+  userRegister: userRegisterReducer,
   // userDetails: userDetailsReducer,
   // userUpdateProfile: userUpdateProfileReducer,
   // userList: userListReducer,
@@ -70,7 +70,7 @@ const initialState = {
     cartItems: cartItemsFromStorage,
     shippingAddress: shippingAddressFromStorage,
   },
-  // userLogin: { userInfo: userInfoFromStorage },
+  userLogin: { userInfo: userInfoFromStorage },
 }
 
 const middleware = [thunk]
