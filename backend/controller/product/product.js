@@ -10,7 +10,7 @@ const Product = require("../../models/product");
             });
 
       router.route('/:id').get((req,res)=>{
-        Product.find({_id:req.params.id}) 
+        Product.findOne({_id:req.params.id}) 
         .then(Product => res.json(Product))
         .catch(err => res.status(400).json('Error: ' + err));
           });

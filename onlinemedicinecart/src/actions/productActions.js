@@ -7,6 +7,9 @@ import {
   PRODUCT_DETAILS_REQUEST,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_FAIL,
+  PRODUCT_SEARCH_REQUEST,
+  PRODUCT_SEARCH_SUCCESS,
+  PRODUCT_SEARCH_FAIL,
   PRODUCT_DELETE_SUCCESS,
   PRODUCT_DELETE_REQUEST,
   PRODUCT_DELETE_FAIL,
@@ -50,7 +53,30 @@ export const listProducts = () => async (
     })
   }
 }
+export const searchProducts = (word) => async (
+  dispatch
+) => {
+  try {
+    dispatch({ type: PRODUCT_SEARCH_REQUEST })
 
+    const { data } = await axios.get(`http://localhost:5000/product/search/${word}`)
+    console.log(data);
+
+    dispatch({
+      type: PRODUCT_SEARCH_SUCCESS,
+      payload: data,
+    })
+
+  } catch (error) {
+    dispatch({
+      type: PRODUCT_SEARCH_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    })
+  }
+}
 export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST })
