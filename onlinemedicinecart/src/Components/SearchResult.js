@@ -1,3 +1,15 @@
+import ProductList from './Catalog/ProductList'
+import React from 'react';
+export default function SearchResult(props)
+{
+    return(
+        <div>
+        <ProductList products={props.products} />
+        </div>
+    )
+}
+
+/*
 import React, {Component} from 'react';
 import axios from 'axios';
 import {useState} from 'react';
@@ -25,3 +37,4 @@ function SearchResults(props){
             );
 }
 export default SearchResults;
+*/
