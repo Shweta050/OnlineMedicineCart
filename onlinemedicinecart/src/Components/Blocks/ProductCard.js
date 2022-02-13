@@ -4,6 +4,19 @@ import {Route, withRouter} from 'react-router-dom';
 import React from 'react';
 export default function ProductCard(product)
 {
+  const register = (name) => {
+    console.log("product "+name);
+    // const { name, email, password, phone } = user
+    // if( name && email && password && phone){
+    //     axios.post("http://localhost:5000/signup", user)
+    //     .then( res => {
+    //         alert(res.data.message)
+    //         navigate('/login')
+    //     })
+    // } else {
+    //     alert("invlid input")
+    // }
+}
     return(
         <Card >
         <CardHeader
@@ -33,8 +46,9 @@ export default function ProductCard(product)
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Add to Cart</Button>
-          <Button component={Link} to={`/product/${product.product._id}`} size="small">View</Button>
+        {/* <div className="button" onClick={register(product.product.name)} >Block Product</div> */}
+          {/* <Button component={Link} to={`/product/${product.product.name}`} size="small">Block product</Button> */}
+          <Button onClick={register(product.product.name)} size="small">Block product</Button>
         </CardActions>
       </Card> 
     // <ListItem key={product.product._id}>

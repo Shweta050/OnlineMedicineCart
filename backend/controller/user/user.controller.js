@@ -36,4 +36,19 @@ router.route('/:id').get((req, res) => {
       .catch(err => res.status(400).json('Error: ' + err));
   });
 
+  router.route('/roles/:name').get((req,res)=>{
+    Users.find(
+      { role: { "$regex": req.params.name, "$options": "i" } })
+      .then((user) => {
+        console.log("Backend accessed, output is "+user);
+        res.json(user);
+      })
+      .catch((err) => {
+        res.status(400).json(`Error : ${err}`);
+      });
+    // Product.find({name:req.params.name}) 
+    // .then(Product => res.json(Product))
+    // .catch(err => res.status(400).json('Error: ' + err));
+          });
+
   module.exports = router;

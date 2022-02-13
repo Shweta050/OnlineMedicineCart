@@ -2,7 +2,7 @@ import { Divider, Grid, Table, TableBody, TableCell, TableContainer, TableRow, T
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import React from 'react';
 export default function ProductDetails()
 {
     const {id} = useParams();

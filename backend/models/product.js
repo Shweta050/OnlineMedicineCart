@@ -18,20 +18,20 @@ const productSchema = new Schema(
         },
         categoryid: {
             type: Number,
-            required: true
+            required: false,
         },
         companyid: {
             type: Number,
-            required: true,
+            required: false,
         },
         brandid: {
             type: Number,
-            required: true
+            required: false
 
           },
           sellerid: {
             type: Number,
-            required: true
+            required: false
 
           },
           quantity: {
@@ -41,23 +41,27 @@ const productSchema = new Schema(
           },
           rating: {
             type: Number,
-            required: true
+            required: false
 
           },
           status: {
             type: String,
-            required: true
+            required: false
 
           },
           reviews: {
             type: String,
-            required: true
+            required: false
 
           },
           pictureUrl: {
             type: String,
             required: false
-
+          },
+          blocked:{ 
+            type: Boolean,
+            required: false,
+            default: false
           }
     }
 );

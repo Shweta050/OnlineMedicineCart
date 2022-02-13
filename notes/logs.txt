@@ -1,0 +1,501 @@
+Router.js:22 Router here
+react-dom.development.js:67 Warning: Invalid DOM property `class`. Did you mean `className`?
+    at p
+    at div
+    at footer
+    at div
+    at Footer
+    at Home
+    at Routes (http://localhost:3000/static/js/bundle.js:87059:5)
+    at Router (http://localhost:3000/static/js/bundle.js:86992:15)
+    at BrowserRouter (http://localhost:3000/static/js/bundle.js:86472:5)
+    at Router (http://localhost:3000/static/js/bundle.js:2307:1)
+printWarning @ react-dom.development.js:67
+error @ react-dom.development.js:43
+validateProperty$1 @ react-dom.development.js:3505
+warnUnknownProperties @ react-dom.development.js:3559
+validateProperties$2 @ react-dom.development.js:3583
+validatePropertiesInDevelopment @ react-dom.development.js:8765
+setInitialProperties @ react-dom.development.js:9041
+finalizeInitialChildren @ react-dom.development.js:10201
+completeWork @ react-dom.development.js:19470
+completeUnitOfWork @ react-dom.development.js:22815
+performUnitOfWork @ react-dom.development.js:22787
+workLoopSync @ react-dom.development.js:22707
+renderRootSync @ react-dom.development.js:22670
+performSyncWorkOnRoot @ react-dom.development.js:22293
+scheduleUpdateOnFiber @ react-dom.development.js:21881
+updateContainer @ react-dom.development.js:25482
+(anonymous) @ react-dom.development.js:26021
+unbatchedUpdates @ react-dom.development.js:22431
+legacyRenderSubtreeIntoContainer @ react-dom.development.js:26020
+render @ react-dom.development.js:26103
+./src/index.js @ index.js:10
+options.factory @ react refresh:6
+__webpack_require__ @ bootstrap:24
+(anonymous) @ startup:7
+(anonymous) @ startup:7
+react-dom.development.js:67 Warning: React does not recognize the `alignRight` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `alignright` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at div
+    at Dropdown (http://localhost:3000/static/js/bundle.js:16044:5)
+    at http://localhost:3000/static/js/bundle.js:32353:70
+    at http://localhost:3000/static/js/bundle.js:32506:5
+    at Category (http://localhost:3000/static/js/bundle.js:904:76)
+    at div
+    at Toolbar (http://localhost:3000/static/js/bundle.js:7717:23)
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at header
+    at Paper (http://localhost:3000/static/js/bundle.js:6660:23)
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at AppBar (http://localhost:3000/static/js/bundle.js:3422:23)
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at Header
+    at Products (http://localhost:3000/static/js/bundle.js:1650:22)
+    at Home
+    at Routes (http://localhost:3000/static/js/bundle.js:87059:5)
+    at Router (http://localhost:3000/static/js/bundle.js:86992:15)
+    at BrowserRouter (http://localhost:3000/static/js/bundle.js:86472:5)
+    at Router (http://localhost:3000/static/js/bundle.js:2307:1)
+printWarning @ react-dom.development.js:67
+error @ react-dom.development.js:43
+validateProperty$1 @ react-dom.development.js:3513
+warnUnknownProperties @ react-dom.development.js:3559
+validateProperties$2 @ react-dom.development.js:3583
+validatePropertiesInDevelopment @ react-dom.development.js:8765
+setInitialProperties @ react-dom.development.js:9041
+finalizeInitialChildren @ react-dom.development.js:10201
+completeWork @ react-dom.development.js:19470
+completeUnitOfWork @ react-dom.development.js:22815
+performUnitOfWork @ react-dom.development.js:22787
+workLoopSync @ react-dom.development.js:22707
+renderRootSync @ react-dom.development.js:22670
+performSyncWorkOnRoot @ react-dom.development.js:22293
+scheduleUpdateOnFiber @ react-dom.development.js:21881
+updateContainer @ react-dom.development.js:25482
+(anonymous) @ react-dom.development.js:26021
+unbatchedUpdates @ react-dom.development.js:22431
+legacyRenderSubtreeIntoContainer @ react-dom.development.js:26020
+render @ react-dom.development.js:26103
+./src/index.js @ index.js:10
+options.factory @ react refresh:6
+__webpack_require__ @ bootstrap:24
+(anonymous) @ startup:7
+(anonymous) @ startup:7
+ProductList.js:10 pro has undefined
+react-jsx-dev-runtime.development.js:117 Warning: Each child in a list should have a unique "key" prop.
+
+Check the render method of `Category`. See https://reactjs.org/link/warning-keys for more information.
+    at http://localhost:3000/static/js/bundle.js:32591:5
+    at Category (http://localhost:3000/static/js/bundle.js:904:76)
+    at div
+    at Toolbar (http://localhost:3000/static/js/bundle.js:7717:23)
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at header
+    at Paper (http://localhost:3000/static/js/bundle.js:6660:23)
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at AppBar (http://localhost:3000/static/js/bundle.js:3422:23)
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at Header
+    at Products (http://localhost:3000/static/js/bundle.js:1650:22)
+    at Home
+    at Routes (http://localhost:3000/static/js/bundle.js:87059:5)
+    at Router (http://localhost:3000/static/js/bundle.js:86992:15)
+    at BrowserRouter (http://localhost:3000/static/js/bundle.js:86472:5)
+    at Router (http://localhost:3000/static/js/bundle.js:2307:1)
+printWarning @ react-jsx-dev-runtime.development.js:117
+error @ react-jsx-dev-runtime.development.js:93
+validateExplicitKey @ react-jsx-dev-runtime.development.js:986
+validateChildKeys @ react-jsx-dev-runtime.development.js:1013
+jsxWithValidation @ react-jsx-dev-runtime.development.js:1184
+Category @ Category.js:32
+renderWithHooks @ react-dom.development.js:14985
+updateFunctionComponent @ react-dom.development.js:17356
+beginWork @ react-dom.development.js:19063
+beginWork$1 @ react-dom.development.js:23940
+performUnitOfWork @ react-dom.development.js:22776
+workLoopSync @ react-dom.development.js:22707
+renderRootSync @ react-dom.development.js:22670
+performSyncWorkOnRoot @ react-dom.development.js:22293
+(anonymous) @ react-dom.development.js:11327
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushSyncCallbackQueueImpl @ react-dom.development.js:11322
+flushSyncCallbackQueue @ react-dom.development.js:11309
+scheduleUpdateOnFiber @ react-dom.development.js:21893
+dispatchAction @ react-dom.development.js:16139
+(anonymous) @ Category.js:17
+Promise.then (async)
+(anonymous) @ Category.js:17
+invokePassiveEffectCreate @ react-dom.development.js:23487
+callCallback @ react-dom.development.js:3945
+invokeGuardedCallbackDev @ react-dom.development.js:3994
+invokeGuardedCallback @ react-dom.development.js:4056
+flushPassiveEffectsImpl @ react-dom.development.js:23574
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushPassiveEffects @ react-dom.development.js:23447
+performSyncWorkOnRoot @ react-dom.development.js:22269
+(anonymous) @ react-dom.development.js:11327
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushSyncCallbackQueueImpl @ react-dom.development.js:11322
+flushSyncCallbackQueue @ react-dom.development.js:11309
+unbatchedUpdates @ react-dom.development.js:22438
+legacyRenderSubtreeIntoContainer @ react-dom.development.js:26020
+render @ react-dom.development.js:26103
+./src/index.js @ index.js:10
+options.factory @ react refresh:6
+__webpack_require__ @ bootstrap:24
+(anonymous) @ startup:7
+(anonymous) @ startup:7
+ProductList.js:10 pro has undefined
+react-jsx-dev-runtime.development.js:117 Warning: Each child in a list should have a unique "key" prop.
+
+Check the render method of `ProductList`. See https://reactjs.org/link/warning-keys for more information.
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at ProductList (http://localhost:3000/static/js/bundle.js:799:19)
+    at div
+    at Catalog (http://localhost:3000/static/js/bundle.js:267:23)
+    at div
+    at Container (http://localhost:3000/static/js/bundle.js:5837:23)
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at Products (http://localhost:3000/static/js/bundle.js:1650:22)
+    at Home
+    at Routes (http://localhost:3000/static/js/bundle.js:87059:5)
+    at Router (http://localhost:3000/static/js/bundle.js:86992:15)
+    at BrowserRouter (http://localhost:3000/static/js/bundle.js:86472:5)
+    at Router (http://localhost:3000/static/js/bundle.js:2307:1)
+printWarning @ react-jsx-dev-runtime.development.js:117
+error @ react-jsx-dev-runtime.development.js:93
+validateExplicitKey @ react-jsx-dev-runtime.development.js:986
+validateChildKeys @ react-jsx-dev-runtime.development.js:1013
+jsxWithValidation @ react-jsx-dev-runtime.development.js:1174
+ProductList @ ProductList.js:9
+renderWithHooks @ react-dom.development.js:14985
+updateFunctionComponent @ react-dom.development.js:17356
+beginWork @ react-dom.development.js:19063
+beginWork$1 @ react-dom.development.js:23940
+performUnitOfWork @ react-dom.development.js:22776
+workLoopSync @ react-dom.development.js:22707
+renderRootSync @ react-dom.development.js:22670
+performSyncWorkOnRoot @ react-dom.development.js:22293
+(anonymous) @ react-dom.development.js:11327
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushSyncCallbackQueueImpl @ react-dom.development.js:11322
+flushSyncCallbackQueue @ react-dom.development.js:11309
+scheduleUpdateOnFiber @ react-dom.development.js:21893
+dispatchAction @ react-dom.development.js:16139
+(anonymous) @ Products.js:15
+Promise.then (async)
+(anonymous) @ Products.js:15
+invokePassiveEffectCreate @ react-dom.development.js:23487
+callCallback @ react-dom.development.js:3945
+invokeGuardedCallbackDev @ react-dom.development.js:3994
+invokeGuardedCallback @ react-dom.development.js:4056
+flushPassiveEffectsImpl @ react-dom.development.js:23574
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushPassiveEffects @ react-dom.development.js:23447
+performSyncWorkOnRoot @ react-dom.development.js:22269
+(anonymous) @ react-dom.development.js:11327
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushSyncCallbackQueueImpl @ react-dom.development.js:11322
+flushSyncCallbackQueue @ react-dom.development.js:11309
+unbatchedUpdates @ react-dom.development.js:22438
+legacyRenderSubtreeIntoContainer @ react-dom.development.js:26020
+render @ react-dom.development.js:26103
+./src/index.js @ index.js:10
+options.factory @ react refresh:6
+__webpack_require__ @ bootstrap:24
+(anonymous) @ startup:7
+(anonymous) @ startup:7
+react.development.js:220 Warning: Failed prop type: Invalid prop `color` of value `text.secondary` supplied to `ForwardRef(Typography)`, expected one of ["initial","inherit","primary","secondary","textPrimary","textSecondary","error"].
+    at Typography (http://localhost:3000/static/js/bundle.js:7943:28)
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at div
+    at CardContent (http://localhost:3000/static/js/bundle.js:5310:23)
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at div
+    at Paper (http://localhost:3000/static/js/bundle.js:6660:23)
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at Card (http://localhost:3000/static/js/bundle.js:5701:23)
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at ProductCard (http://localhost:3000/static/js/bundle.js:354:27)
+    at div
+    at Grid (http://localhost:3000/static/js/bundle.js:6426:35)
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at div
+    at Grid (http://localhost:3000/static/js/bundle.js:6426:35)
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at ProductList (http://localhost:3000/static/js/bundle.js:799:19)
+    at div
+    at Catalog (http://localhost:3000/static/js/bundle.js:267:23)
+    at div
+    at Container (http://localhost:3000/static/js/bundle.js:5837:23)
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at Products (http://localhost:3000/static/js/bundle.js:1650:22)
+    at Home
+    at Routes (http://localhost:3000/static/js/bundle.js:87059:5)
+    at Router (http://localhost:3000/static/js/bundle.js:86992:15)
+    at BrowserRouter (http://localhost:3000/static/js/bundle.js:86472:5)
+    at Router (http://localhost:3000/static/js/bundle.js:2307:1)
+printWarning @ react.development.js:220
+error @ react.development.js:196
+checkPropTypes @ react.development.js:1935
+validatePropTypes @ react.development.js:2136
+createElementWithValidation @ react.development.js:2240
+WithStyles @ withStyles.js:79
+renderWithHooks @ react-dom.development.js:14985
+updateForwardRef @ react-dom.development.js:17044
+beginWork @ react-dom.development.js:19098
+beginWork$1 @ react-dom.development.js:23940
+performUnitOfWork @ react-dom.development.js:22776
+workLoopSync @ react-dom.development.js:22707
+renderRootSync @ react-dom.development.js:22670
+performSyncWorkOnRoot @ react-dom.development.js:22293
+(anonymous) @ react-dom.development.js:11327
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushSyncCallbackQueueImpl @ react-dom.development.js:11322
+flushSyncCallbackQueue @ react-dom.development.js:11309
+scheduleUpdateOnFiber @ react-dom.development.js:21893
+dispatchAction @ react-dom.development.js:16139
+(anonymous) @ Products.js:15
+Promise.then (async)
+(anonymous) @ Products.js:15
+invokePassiveEffectCreate @ react-dom.development.js:23487
+callCallback @ react-dom.development.js:3945
+invokeGuardedCallbackDev @ react-dom.development.js:3994
+invokeGuardedCallback @ react-dom.development.js:4056
+flushPassiveEffectsImpl @ react-dom.development.js:23574
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushPassiveEffects @ react-dom.development.js:23447
+performSyncWorkOnRoot @ react-dom.development.js:22269
+(anonymous) @ react-dom.development.js:11327
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushSyncCallbackQueueImpl @ react-dom.development.js:11322
+flushSyncCallbackQueue @ react-dom.development.js:11309
+unbatchedUpdates @ react-dom.development.js:22438
+legacyRenderSubtreeIntoContainer @ react-dom.development.js:26020
+render @ react-dom.development.js:26103
+./src/index.js @ index.js:10
+options.factory @ react refresh:6
+__webpack_require__ @ bootstrap:24
+(anonymous) @ startup:7
+(anonymous) @ startup:7
+ProductList.js:10 pro has undefined
+ProductList.js:10 pro has undefined
+SearchBar.js:12 Length of string is 5 typeof string
+SearchBar.js:14 Update set to true
+ProductList.js:10 pro has undefined
+SearchProducts.js:16 Calling axios with keyword vicks
+ProductList.js:10 pro has undefined
+ProductList.js:10 pro has undefined
+SearchProducts.js:16 Calling axios with keyword p
+ProductList.js:10 pro has undefined
+ProductList.js:10 pro has undefined
+SearchProducts.js:16 Calling axios with keyword pr
+ProductList.js:10 pro has undefined
+ProductList.js:10 pro has undefined
+SearchProducts.js:16 Calling axios with keyword pro
+ProductList.js:10 pro has undefined
+ProductList.js:10 pro has undefined
+SearchProducts.js:16 Calling axios with keyword 
+SearchProducts.js:17          GET http://localhost:5000/product/search/ 400 (Bad Request)
+(anonymous) @ SearchProducts.js:17
+invokePassiveEffectCreate @ react-dom.development.js:23487
+callCallback @ react-dom.development.js:3945
+invokeGuardedCallbackDev @ react-dom.development.js:3994
+invokeGuardedCallback @ react-dom.development.js:4056
+flushPassiveEffectsImpl @ react-dom.development.js:23574
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushPassiveEffects @ react-dom.development.js:23447
+flushDiscreteUpdates @ react-dom.development.js:22356
+finishEventHandler @ react-dom.development.js:3714
+batchedEventUpdates @ react-dom.development.js:3748
+dispatchEventForPluginEventSystem @ react-dom.development.js:8507
+attemptToDispatchEvent @ react-dom.development.js:6005
+dispatchEvent @ react-dom.development.js:5924
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+discreteUpdates$1 @ react-dom.development.js:22413
+discreteUpdates @ react-dom.development.js:3756
+dispatchDiscreteEvent @ react-dom.development.js:5889
+ProductList.js:10 pro has undefined
+ProductList.js:10 pro has undefined
+ProductList.js:10 Uncaught TypeError: pro.map is not a function
+    at ProductList (ProductList.js:10:1)
+    at renderWithHooks (react-dom.development.js:14985:1)
+    at updateFunctionComponent (react-dom.development.js:17356:1)
+    at beginWork (react-dom.development.js:19063:1)
+    at HTMLUnknownElement.callCallback (react-dom.development.js:3945:1)
+    at Object.invokeGuardedCallbackDev (react-dom.development.js:3994:1)
+    at invokeGuardedCallback (react-dom.development.js:4056:1)
+    at beginWork$1 (react-dom.development.js:23964:1)
+    at performUnitOfWork (react-dom.development.js:22776:1)
+    at workLoopSync (react-dom.development.js:22707:1)
+ProductList @ ProductList.js:10
+renderWithHooks @ react-dom.development.js:14985
+updateFunctionComponent @ react-dom.development.js:17356
+beginWork @ react-dom.development.js:19063
+callCallback @ react-dom.development.js:3945
+invokeGuardedCallbackDev @ react-dom.development.js:3994
+invokeGuardedCallback @ react-dom.development.js:4056
+beginWork$1 @ react-dom.development.js:23964
+performUnitOfWork @ react-dom.development.js:22776
+workLoopSync @ react-dom.development.js:22707
+renderRootSync @ react-dom.development.js:22670
+performSyncWorkOnRoot @ react-dom.development.js:22293
+(anonymous) @ react-dom.development.js:11327
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushSyncCallbackQueueImpl @ react-dom.development.js:11322
+flushSyncCallbackQueue @ react-dom.development.js:11309
+scheduleUpdateOnFiber @ react-dom.development.js:21893
+dispatchAction @ react-dom.development.js:16139
+(anonymous) @ SearchProducts.js:17
+Promise.then (async)
+(anonymous) @ SearchProducts.js:17
+invokePassiveEffectCreate @ react-dom.development.js:23487
+callCallback @ react-dom.development.js:3945
+invokeGuardedCallbackDev @ react-dom.development.js:3994
+invokeGuardedCallback @ react-dom.development.js:4056
+flushPassiveEffectsImpl @ react-dom.development.js:23574
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushPassiveEffects @ react-dom.development.js:23447
+flushDiscreteUpdates @ react-dom.development.js:22356
+finishEventHandler @ react-dom.development.js:3714
+batchedEventUpdates @ react-dom.development.js:3748
+dispatchEventForPluginEventSystem @ react-dom.development.js:8507
+attemptToDispatchEvent @ react-dom.development.js:6005
+dispatchEvent @ react-dom.development.js:5924
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+discreteUpdates$1 @ react-dom.development.js:22413
+discreteUpdates @ react-dom.development.js:3756
+dispatchDiscreteEvent @ react-dom.development.js:5889
+react-dom.development.js:20085 The above error occurred in the <ProductList> component:
+
+    at ProductList (http://localhost:3000/static/js/bundle.js:799:19)
+    at div
+    at SearchResult (http://localhost:3000/static/js/bundle.js:1990:23)
+    at div
+    at Container (http://localhost:3000/static/js/bundle.js:5837:23)
+    at WithStyles (http://localhost:3000/static/js/bundle.js:10945:31)
+    at SearchProducts (http://localhost:3000/static/js/bundle.js:1895:22)
+    at div
+    at SearchBar (http://localhost:3000/static/js/bundle.js:1754:72)
+    at div
+    at O (http://localhost:3000/static/js/bundle.js:94778:6)
+    at nav
+    at O (http://localhost:3000/static/js/bundle.js:94778:6)
+    at Navbar
+    at Home
+    at Routes (http://localhost:3000/static/js/bundle.js:87059:5)
+    at Router (http://localhost:3000/static/js/bundle.js:86992:15)
+    at BrowserRouter (http://localhost:3000/static/js/bundle.js:86472:5)
+    at Router (http://localhost:3000/static/js/bundle.js:2307:1)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+logCapturedError @ react-dom.development.js:20085
+update.callback @ react-dom.development.js:20118
+callCallback @ react-dom.development.js:12318
+commitUpdateQueue @ react-dom.development.js:12339
+commitLifeCycles @ react-dom.development.js:20736
+commitLayoutEffects @ react-dom.development.js:23426
+callCallback @ react-dom.development.js:3945
+invokeGuardedCallbackDev @ react-dom.development.js:3994
+invokeGuardedCallback @ react-dom.development.js:4056
+commitRootImpl @ react-dom.development.js:23151
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+commitRoot @ react-dom.development.js:22990
+performSyncWorkOnRoot @ react-dom.development.js:22329
+(anonymous) @ react-dom.development.js:11327
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushSyncCallbackQueueImpl @ react-dom.development.js:11322
+flushSyncCallbackQueue @ react-dom.development.js:11309
+scheduleUpdateOnFiber @ react-dom.development.js:21893
+dispatchAction @ react-dom.development.js:16139
+(anonymous) @ SearchProducts.js:17
+Promise.then (async)
+(anonymous) @ SearchProducts.js:17
+invokePassiveEffectCreate @ react-dom.development.js:23487
+callCallback @ react-dom.development.js:3945
+invokeGuardedCallbackDev @ react-dom.development.js:3994
+invokeGuardedCallback @ react-dom.development.js:4056
+flushPassiveEffectsImpl @ react-dom.development.js:23574
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushPassiveEffects @ react-dom.development.js:23447
+flushDiscreteUpdates @ react-dom.development.js:22356
+finishEventHandler @ react-dom.development.js:3714
+batchedEventUpdates @ react-dom.development.js:3748
+dispatchEventForPluginEventSystem @ react-dom.development.js:8507
+attemptToDispatchEvent @ react-dom.development.js:6005
+dispatchEvent @ react-dom.development.js:5924
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+discreteUpdates$1 @ react-dom.development.js:22413
+discreteUpdates @ react-dom.development.js:3756
+dispatchDiscreteEvent @ react-dom.development.js:5889
+ProductList.js:10 Uncaught (in promise) TypeError: pro.map is not a function
+    at ProductList (ProductList.js:10:1)
+    at renderWithHooks (react-dom.development.js:14985:1)
+    at updateFunctionComponent (react-dom.development.js:17356:1)
+    at beginWork (react-dom.development.js:19063:1)
+    at HTMLUnknownElement.callCallback (react-dom.development.js:3945:1)
+    at Object.invokeGuardedCallbackDev (react-dom.development.js:3994:1)
+    at invokeGuardedCallback (react-dom.development.js:4056:1)
+    at beginWork$1 (react-dom.development.js:23964:1)
+    at performUnitOfWork (react-dom.development.js:22776:1)
+    at workLoopSync (react-dom.development.js:22707:1)
+ProductList @ ProductList.js:10
+renderWithHooks @ react-dom.development.js:14985
+updateFunctionComponent @ react-dom.development.js:17356
+beginWork @ react-dom.development.js:19063
+callCallback @ react-dom.development.js:3945
+invokeGuardedCallbackDev @ react-dom.development.js:3994
+invokeGuardedCallback @ react-dom.development.js:4056
+beginWork$1 @ react-dom.development.js:23964
+performUnitOfWork @ react-dom.development.js:22776
+workLoopSync @ react-dom.development.js:22707
+renderRootSync @ react-dom.development.js:22670
+performSyncWorkOnRoot @ react-dom.development.js:22293
+(anonymous) @ react-dom.development.js:11327
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushSyncCallbackQueueImpl @ react-dom.development.js:11322
+flushSyncCallbackQueue @ react-dom.development.js:11309
+scheduleUpdateOnFiber @ react-dom.development.js:21893
+dispatchAction @ react-dom.development.js:16139
+(anonymous) @ SearchProducts.js:17
+Promise.then (async)
+(anonymous) @ SearchProducts.js:17
+invokePassiveEffectCreate @ react-dom.development.js:23487
+callCallback @ react-dom.development.js:3945
+invokeGuardedCallbackDev @ react-dom.development.js:3994
+invokeGuardedCallback @ react-dom.development.js:4056
+flushPassiveEffectsImpl @ react-dom.development.js:23574
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+flushPassiveEffects @ react-dom.development.js:23447
+flushDiscreteUpdates @ react-dom.development.js:22356
+finishEventHandler @ react-dom.development.js:3714
+batchedEventUpdates @ react-dom.development.js:3748
+dispatchEventForPluginEventSystem @ react-dom.development.js:8507
+attemptToDispatchEvent @ react-dom.development.js:6005
+dispatchEvent @ react-dom.development.js:5924
+unstable_runWithPriority @ scheduler.development.js:468
+runWithPriority$1 @ react-dom.development.js:11276
+discreteUpdates$1 @ react-dom.development.js:22413
+discreteUpdates @ react-dom.development.js:3756
+dispatchDiscreteEvent @ react-dom.development.js:5889

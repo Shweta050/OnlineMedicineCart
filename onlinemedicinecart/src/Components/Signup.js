@@ -3,6 +3,8 @@ import Navbar from './Navbar'
 import axios from "axios";
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
+// import React from 'react';
+// import './Styles/Signup.css';
 
 const Signup = () => {
 

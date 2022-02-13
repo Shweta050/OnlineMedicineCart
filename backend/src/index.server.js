@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 //routes
 const userRoutes= require('../routes/userAuth');
+// const sellerRoutes = require('../routes/sellerAuth');
 const userControllerRoutes= require('../controller/user/user.controller');
 const categoryRoutes= require('../controller/category/category');
 const productRoutes= require('../controller/product/product');
@@ -43,6 +44,7 @@ mongoose.connect(
 });
 app.use(bodyParser.json());
 app.use("/", userRoutes);
+// app.use("/seller", sellerRoutes);
 app.use("/user", userControllerRoutes);
 app.use("/category", categoryRoutes);
 app.use("/product", productRoutes);
