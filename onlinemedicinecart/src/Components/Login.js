@@ -1,40 +1,49 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import axios from 'axios';
-import {useNavigate} from "react-router-dom"
+import {useNavigate,useLocation} from "react-router-dom"
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { TextField, Link, Button } from '@material-ui/core';
+import{useDispatch,useSelector} from 'react-redux'
+import Message from './Message';
+import { loginaction } from '../actions/userActions';
+import Loader from './Loader';
 
 const Login = ({setLoginUser}) => {
 const navigate = useNavigate()
+const location = useLocation();
+
     const [user,setUser] = useState({
         name:"",
         password: ""
     })
     const handleChange = e =>{
+      console.log('setuser')
     const {name,value} = e.target
     setUser({
     ...user,//spread operator 
     [name]:value
     })
     }
+  //Using redux action instead of normal post
+  const dispatch = useDispatch();
 
+  const userLogin = useSelector(state=> state.userLogin)
+  const {loading, error, userInfo} = userLogin
+  const redirect = location.search ? location.search.split('=')[1]:'/'
+  
+  useEffect(()=>
+  {
+    if(userInfo)
+    {
+      console.log(redirect)
+      navigate(`/${redirect}`)
+    }
+  },[navigate,userInfo,redirect])
+  /////
     const login =()=>{
-        axios.post("http://localhost:5000/Login",user)
-        .then(function(res){
-      const role=res.data.user.role;
-      if(role ==='user'){
-       navigate('/userhome');
-      }
-      else if(role ==='seller'){
-        navigate('/sellerhome');
-      }
-      else{
-        navigate('/adminhome');
-      }
-    }).catch((err) => {
-        alert("Invalid Email ID or password")
-    });
+      console.log('login handle')
+      dispatch(loginaction(user.email,user.password))
 	}
     return (
          <>
@@ -43,7 +52,8 @@ const navigate = useNavigate()
         <div>
           <h2>Login</h2>
         </div>
-
+       {error && <Message variant='danger'>{error}</Message>}
+       {loading && <Loader></Loader>}
         <div>
           <TextField
             id="standard-basic"
@@ -68,6 +78,7 @@ const navigate = useNavigate()
           />
           <br /><br />
           <Button
+            type = "submit"
             className="button_style"
             variant="contained"
             color="primary"

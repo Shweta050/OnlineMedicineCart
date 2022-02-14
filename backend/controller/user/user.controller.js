@@ -1,12 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const Users = require("../../models/user");
+const Users = require("../../models/userModel");
+const {protect} = require('../../middleware/authMiddleware')
+const  {getUserProfile, updateUserProfile}  = require('./auth');
 
 router.route('/').get((req,res)=>{
     Users.find() 
     .then(User => res.json(User))
     .catch(err => res.status(400).json('Error: ' + err));
       });
+
+router.route('/profile').
+get(protect,getUserProfile)
+.put(protect,updateUserProfile);
 
 router.route('/:id').get((req, res) => {
     Users.findById(req.params.id)
@@ -35,5 +41,20 @@ router.route('/:id').get((req, res) => {
       })
       .catch(err => res.status(400).json('Error: ' + err));
   });
+
+  router.route('/roles/:name').get((req,res)=>{
+    Users.find(
+      { role: { "$regex": req.params.name, "$options": "i" } })
+      .then((user) => {
+        console.log("Backend accessed, output is "+user);
+        res.json(user);
+      })
+      .catch((err) => {
+        res.status(400).json(`Error : ${err}`);
+      });
+    // Product.find({name:req.params.name}) 
+    // .then(Product => res.json(Product))
+    // .catch(err => res.status(400).json('Error: ' + err));
+          });
 
   module.exports = router;

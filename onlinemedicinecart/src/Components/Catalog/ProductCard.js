@@ -1,9 +1,10 @@
 import { Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, ListItem, ListItemAvatar, ListItemText, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import {Route, withRouter} from 'react-router-dom';
-
+import React from 'react';
 export default function ProductCard(product)
 {
+  console.log(product)
     return(
         <Card >
         <CardHeader
@@ -20,7 +21,7 @@ export default function ProductCard(product)
         <CardMedia
           component="img"
           sx ={{height:140, backgroundSize:'contain', bgcolor:'primary.light'}}
-          image={product.product.pictureUrl}
+          image={product.product.image}
           title ={product.product.name}
           alt="no image available"
         />
@@ -33,7 +34,6 @@ export default function ProductCard(product)
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Add to Cart</Button>
           <Button component={Link} to={`/product/${product.product._id}`} size="small">View</Button>
         </CardActions>
       </Card> 
@@ -46,4 +46,4 @@ export default function ProductCard(product)
     //     </ListItemText>
     // </ListItem>
        )
-} 
+}

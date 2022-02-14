@@ -9,13 +9,21 @@ const Schema = mongoose.Schema;
 const cartSchema = new Schema(
     {
         userid: {
-            type: Number,
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
             required: true
         },
-        productid: {
-            type: Number,
-            required: true
-        }
+        quantity:{
+            type:Number,
+        },
+        total:{
+            type:Number,
+        },
+        Products:{
+            productId: Number,
+            quantity: Number,
+            name: String,
+            price: Number        }
     }
 );
 

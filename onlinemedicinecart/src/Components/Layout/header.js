@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import Category from '.././Category';
-
+import React from 'react';
 export default function Header()
 {
     return(
@@ -12,4 +12,4 @@ export default function Header()
             </Toolbar>
         </AppBar>
     )
-} 
+}
