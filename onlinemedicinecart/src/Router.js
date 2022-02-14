@@ -36,7 +36,7 @@ class Router extends Component {
                 <Route path="/sellerHome/addProduct" element={<AddProduct/>} />
                 <Route path="/adminHome/blockProduct" element={<BlockProduct/>} />
                 <Route path="/product/search/:keyword" element={<SearchProducts/>}  />
-
+                console.log('Router here')
             </Routes>
             <Routes>
                     <Route path='/cart/:id' element={<CartScreen/>} />

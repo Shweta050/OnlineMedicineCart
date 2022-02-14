@@ -3,11 +3,14 @@ import SearchProducts from './SearchProducts';
 import Product from './Products';
 import {useState} from 'react';
 import '../Styles/SearchBar.css';
+import { useNavigate } from "react-router-dom";
 
 function SearchBar() {
   const [key, setKey] = useState('');
   const [update, setupdate] = useState(false);
   const [alert, setAlert] = useState(false);
+  const navigate = useNavigate()
+
   const toUpdate = (data) => {
     setKey(data);
     console.log("After change Key is "+key+" and data is "+data);
@@ -21,6 +24,7 @@ function SearchBar() {
       console.log("Update set to false");
       setAlert(true);
       setupdate(false);
+      navigate('/Home',{ replace: false });
     }
   }
   return (

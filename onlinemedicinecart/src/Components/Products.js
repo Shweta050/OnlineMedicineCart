@@ -21,20 +21,23 @@ function Products(props)
 
     const dispatch = useDispatch()
 
-    const productList = useSelector((state) => state.productList)
-    const { loading,error,products } = productList
+
 
     useEffect(()=>
     {
         // fetch(`http://localhost:5000/product`)
         // .then(resp=>resp.json())
         // .then(data=>setProducts(data))
+        console.log('Product main')
         dispatch(listProducts())
     },[dispatch,word])   
+
+    const productList = useSelector((state) => state.productList)
+    const { loading,error,products } = productList
 return(
     <>
-        <Button component={Link} to={`./adminHome`} size="small">AdminView</Button>
-        <Button component={Link} to={`./sellerHome`} size="small">SellerView</Button>
+        <Button component={Link} to={`/adminHome`} size="small">AdminView</Button>
+        <Button component={Link} to={`/sellerHome`} size="small">SellerView</Button>
         <CssBaseline></CssBaseline>
         <Header></Header>
         {loading? <Loader/>: error? <Message>{error}</Message>:

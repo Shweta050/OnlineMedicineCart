@@ -8,10 +8,20 @@ import {Message} from '../Message'
 export default function ProductList(props)
 {
     const productList = useSelector((state) => state.productList)
+    const filteredProducts = useSelector((state) => state.filteredproductDetails)
+
     const { loading,error,products } = productList
-    console.log(products)
-    let pro = props.products;
+    let pro = products;
+
+    console.log(products,filteredProducts)
+    if(filteredProducts.products.length)
+     {
+         console.log('filtered products are set',filteredProducts.products.length)
+        pro = filteredProducts.products
+     }
     console.log()
+    
+
     // pro = pro.toString().split(" ");
     return(
         <>

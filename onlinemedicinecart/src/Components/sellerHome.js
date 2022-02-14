@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export default function SellerHomePage(){
     return(
         <>
+        {console.log('sellerHomePage')}
         <div>
             <h2>Card</h2>
             <div id="row">
