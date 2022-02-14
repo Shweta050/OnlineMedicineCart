@@ -61,6 +61,12 @@ mongoose.connect(
 }).catch(err => {
     console.log('Error connecting to MongoDB : ' + err);
 });
+
+app.get('/config/paypal', (req,res)=>
+{
+  res.send('AQGXewMSnYV7-2ok7rZG1DzitcY4xTXrDRrsUK38ReAssGJRlIT0r3YXC7YmW2cCAhEfkA3P44QdpbKU')
+})
+
 app.use(bodyParser.json());
 app.use("/", userRoutes);
 // app.use("/seller", sellerRoutes);

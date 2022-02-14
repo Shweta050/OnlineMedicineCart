@@ -20,6 +20,7 @@ import ProfileScreen from './Components/Screens/ProfileScreen';
 import ShippingScreen from './Components/Screens/ShippingScreen';
 import PaymentScreen from './Components/Screens/PaymentScreen';
 import PlaceOrderScreen from './Components/Screens/PlaceOrderScreen';
+import OrderScreen from './Components/Screens/OrderScreen';
 
 class Router extends Component {
 
@@ -44,6 +45,7 @@ class Router extends Component {
                 <Route path='/shipping' element={<ShippingScreen/>} />
                 <Route path='/payment' element={<PaymentScreen/>} />
                 <Route path='/placeorder' element={<PlaceOrderScreen/>} />
+                <Route path='/order/:id' element={<OrderScreen/>} />
 
                 console.log('Router here')
             </Routes>
