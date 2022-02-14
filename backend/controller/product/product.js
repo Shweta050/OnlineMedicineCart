@@ -4,7 +4,7 @@ const Product = require("../../models/product");
 
       router.route('/').get((req,res)=>{
         console.log("Called from here");
-          Product.find() 
+          Product.find({blocked : false}) 
           .then(Product => res.json(Product))
           .catch(err => res.status(400).json('Error: ' + err));
             });
@@ -71,7 +71,49 @@ const Product = require("../../models/product");
           //   .catch((err) => {
           //     res.status(400).json(`Error : ${err}`);
           //   });
-        });              
+        });    
+        
+        router.route('/delete/:prodName').delete((req, res) => {
+
+            Product.findOne({name: req.params.prodName}, function(err, product) {
+              if(!err) {
+                  if(!product) {
+                      console.log("Product not found");
+                  }
+                  product.blocked=true;
+                  product.delete(function(err) {
+                      if(!err) {
+                          console.log("product " + product.name + " deleted");
+                          res.json("Successfully deleted product " + product.name);
+                      }
+                      else {
+                          console.log("Error: could not delete product " + product.name);
+                      }
+                  });
+              }
+        });
+      });
+
+      router.route('/update/:prodName/:quant').post((req, res) => {
+        Product.findOne({name: req.params.prodName}, function(err, product) {
+          if(!err) {
+              if(!product) {
+                  console.log("Product not found");
+              }
+              // contact.status = request.status;
+              product.quantity= Number(product.quantity) + Number(req.params.quant);
+              product.save(function(err) {
+                  if(!err) {
+                      console.log("quantity " + product.quantity + " updated "+" -> "+product.name);
+                      res.json("Successfully updated product " + product.name);
+                  }
+                  else {
+                      console.log("Error: could not block product " + product.name);
+                  }
+              });
+          }
+      });
+    });
 router.route('/add').post((req, res) => {
     const name = req.body.name;
     const price = req.body.price;

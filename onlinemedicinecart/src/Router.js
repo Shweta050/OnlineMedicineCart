@@ -21,6 +21,11 @@ import ShippingScreen from './Components/Screens/ShippingScreen';
 import PaymentScreen from './Components/Screens/PaymentScreen';
 import PlaceOrderScreen from './Components/Screens/PlaceOrderScreen';
 import OrderScreen from './Components/Screens/OrderScreen';
+import BlockedProds from './Components/Blocks/blockedProds';
+import SellerDeleteProduct from './Components/sellerDeleteProduct';
+import DeletedProds from './Components/sellerDeleteProducts/deletedProds';
+import SellerUpdateQuant from './Components/sellerUpdateQuant';
+import QuantProductDetail from './Components/sellerUpdateQuantity/ProductDetails';
 
 class Router extends Component {
 
@@ -40,6 +45,10 @@ class Router extends Component {
                 <Route path="/adminHome/adminUsersSellers" element={<UsersSellers/>} />
                 <Route path="/sellerHome" element={<SellerHomePage/>} />
                 <Route path="/sellerHome/addProduct" element={<AddProduct/>} />
+                <Route path="/sellerHome/sellerDeleteProduct" element={<SellerDeleteProduct/>} />
+                <Route path="/sellerHome/sellerDeleteProduct/deletedProds/:name" element={<DeletedProds/>} />
+                <Route path="/sellerHome/sellerUpdateQuant" element={<SellerUpdateQuant/>} />
+                <Route path="/sellerHome/sellerUpdateQuant/product/:id" element={<QuantProductDetail/>} />
                 <Route path="/adminHome/blockProduct" element={<BlockProduct/>} />
                 <Route path="/product/search/:keyword" element={<SearchProducts/>}  />
                 <Route path='/shipping' element={<ShippingScreen/>} />
