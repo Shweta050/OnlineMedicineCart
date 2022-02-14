@@ -16,6 +16,7 @@ import UsersSellers from './Components/adminUsersSellers';
 import BlockProduct from './Components/blockProduct';
 import { Container } from 'react-bootstrap'
 import SearchProducts from './Components/SearchProducts';
+import ProfileScreen from './Components/Screens/ProfileScreen';
 
 class Router extends Component {
 
@@ -28,6 +29,7 @@ class Router extends Component {
                 <Route path="/home" element={<Home/>}  />
                 <Route path="/signup" element={<Signup/>} />
                 <Route path="/login" element={<Login/>} />
+                <Route path="/profile" element={<ProfileScreen/>} />
                 <Route path="/product/:id" element={<ProductDetails/>} />
                 <Route path="/adminHome" element={<AdminHomePage/>} />
                 <Route path="/adminHome/adminSignUpSeller" element={<AdminSellerSignup/>} />

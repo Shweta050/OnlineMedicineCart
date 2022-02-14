@@ -1,12 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const Users = require("../../models/userModel");
+const {protect} = require('../../middleware/authMiddleware')
+const  {getUserProfile, updateUserProfile}  = require('./auth');
 
 router.route('/').get((req,res)=>{
     Users.find() 
     .then(User => res.json(User))
     .catch(err => res.status(400).json('Error: ' + err));
       });
+
+router.route('/profile').
+get(protect,getUserProfile)
+.put(protect,updateUserProfile);
 
 router.route('/:id').get((req, res) => {
     Users.findById(req.params.id)
@@ -50,5 +56,6 @@ router.route('/:id').get((req, res) => {
     // .then(Product => res.json(Product))
     // .catch(err => res.status(400).json('Error: ' + err));
           });
+
 
   module.exports = router;
