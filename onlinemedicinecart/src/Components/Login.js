@@ -36,7 +36,8 @@ const location = useLocation();
   {
     if(userInfo)
     {
-      navigate(redirect)
+      console.log(redirect)
+      navigate(`/${redirect}`)
     }
   },[navigate,userInfo,redirect])
   /////

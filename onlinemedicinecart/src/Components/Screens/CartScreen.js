@@ -30,7 +30,7 @@ const CartScreen = () => {
   }
 
   const checkoutHandler = () => {
-    navigate(`/cart/${productId}?qty=${qty}`)
+    navigate(`/login?redirect=shipping`)
 
   }
 
@@ -105,6 +105,7 @@ const CartScreen = () => {
                 type='button'
                 className='btn-block'
                 disabled={cartItems.length === 0}
+                onClick={checkoutHandler}
               >
                 Proceed To Checkout
               </Button>

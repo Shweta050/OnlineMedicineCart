@@ -11,6 +11,7 @@ const userControllerRoutes= require('../controller/user/user.controller');
 const categoryRoutes= require('../controller/category/category');
 const productRoutes= require('../controller/product/product');
 const cartRoutes= require('../controller/cart/cart');
+const orderRoutes= require('../controller/order/orderController');
 
 
 //Environment Variable
@@ -69,5 +70,6 @@ app.use("/product", productRoutes);
 app.use("/product:", productRoutes);
 
 app.use("/cart", cartRoutes);
+app.use("/order", orderRoutes);
 
 
