@@ -47,7 +47,7 @@ export default function ProductCard(product)
         </CardContent>
         <CardActions>
         {/* <div className="button" ><button type="submit" onClick={register(product.product.name)}>Block Product</button></div> */}
-          <Button component={Link} to={`./blockedProds/${product.product.name}`} size="small">Block product</Button>
+          <Button component={Link} to={`./deletedProds/${product.product.name}`} size="small">Delete product</Button>
           {/* <Button onClick={register(product.product.name)} size="small">Block product</Button> */}
         </CardActions>
       </Card> 

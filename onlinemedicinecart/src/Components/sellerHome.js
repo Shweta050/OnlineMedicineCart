@@ -22,10 +22,12 @@ export default function SellerHomePage(){
 
             <div id="column">
             <div id="card">
+            <Link to={`./sellerDeleteProduct`} activeClassName="active">
             <img src={require('../Assets/logo.jpg')} alt="Avatar" />
             <div id="container">
-                <h4><b>View all Sellers</b></h4>  
+                <h4><b>Delete product</b></h4>  
             </div>
+            </Link>
             </div>
             </div>
             </div>
@@ -33,10 +35,12 @@ export default function SellerHomePage(){
             <div id="row">
             <div id="column">
             <div id="card">
+            <Link to={`./sellerUpdateQuant`} activeClassName="active">
             <img src={require('../Assets/logo.jpg')} alt="Avatar" />
             <div id="container">
-                <h4><b>View all Users</b></h4>  
+                <h4><b>Alter quantity</b></h4>  
             </div>
+            </Link>
             </div>
             </div>
 

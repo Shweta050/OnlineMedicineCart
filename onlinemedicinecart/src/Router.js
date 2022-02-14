@@ -13,6 +13,11 @@ import AddProduct from './Components/addProduct';
 import SellerHomePage from './Components/sellerHome';
 import UsersSellers from './Components/adminUsersSellers';
 import BlockProduct from './Components/blockProduct';
+import BlockedProds from './Components/Blocks/blockedProds';
+import SellerDeleteProduct from './Components/sellerDeleteProduct';
+import DeletedProds from './Components/sellerDeleteProducts/deletedProds';
+import SellerUpdateQuant from './Components/sellerUpdateQuant';
+import QuantProductDetail from './Components/sellerUpdateQuantity/ProductDetails';
 class Router extends Component {
 
     render () {
@@ -30,7 +35,12 @@ class Router extends Component {
                 <Route path="/adminHome/adminUsersSellers" element={<UsersSellers/>} />
                 <Route path="/sellerHome" element={<SellerHomePage/>} />
                 <Route path="/sellerHome/addProduct" element={<AddProduct/>} />
+                <Route path="/sellerHome/sellerDeleteProduct" element={<SellerDeleteProduct/>} />
+                <Route path="/sellerHome/sellerDeleteProduct/deletedProds/:name" element={<DeletedProds/>} />
+                <Route path="/sellerHome/sellerUpdateQuant" element={<SellerUpdateQuant/>} />
+                <Route path="/sellerHome/sellerUpdateQuant/product/:id" element={<QuantProductDetail/>} />
                 <Route path="/adminHome/blockProduct" element={<BlockProduct/>} />
+                <Route path="/adminHome/blockProduct/blockedProds/:name" element={<BlockedProds/>} />
 {console.log("Router here")}
             </Routes>
             </BrowserRouter>
