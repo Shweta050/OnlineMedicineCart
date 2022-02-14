@@ -65,6 +65,16 @@ const productSchema = mongoose.Schema(
       required: true,
       default: 0,
     },
+    sellerid: {
+      type: Number,
+      required: false
+
+    },
+    blocked:{ 
+      type: Boolean,
+      required: false,
+      default: false
+    }
   },
   {
     timestamps: true,

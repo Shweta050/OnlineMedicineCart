@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Product = require("../../models/product");
+const Product = require("../../models/productModel");
 
       router.route('/').get((req,res)=>{
         console.log("Called from here");

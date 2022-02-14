@@ -10,6 +10,7 @@ const products = [
     countInStock: 3,
     rating: 0,
     numReviews: 0,
+    blocked:false
   },
   {
     name: 'OneTouchSelect Test Strips',
@@ -22,6 +23,7 @@ const products = [
     countInStock: 10,
     rating: 0,
     numReviews: 0,
+    blocked:false
   },
   {
     name: 'Yoga Bar Whye Protien',
@@ -34,6 +36,7 @@ const products = [
     countInStock: 0,
     rating: 0,
     numReviews: 0,
+    blocked:false
   },
   {
     name: 'Dettol Original Germ Protection Bathing Soap Bar - 125',
@@ -46,6 +49,7 @@ const products = [
     countInStock: 10,
     rating: 0,
     numReviews: 0,
+    blocked:false
   },
   {
     name: 'Hansaplast Fixation Tape 5 Cm X 914 Cm',
@@ -58,6 +62,7 @@ const products = [
     countInStock: 7,
     rating: 0,
     numReviews: 0,
+    blocked:false
   },
   {
     name: 'Evion 400mg Strip Of 10 Capsules',
@@ -70,6 +75,7 @@ const products = [
     countInStock: 0,
     rating: 0,
     numReviews: 0,
+    blocked:false
   },
 ]
 
