@@ -34,7 +34,6 @@ export default function ProductCard(product)
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Add to Cart</Button>
           <Button component={Link} to={`/product/${product.product._id}`} size="small">View</Button>
         </CardActions>
       </Card> 

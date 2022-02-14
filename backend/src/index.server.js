@@ -11,6 +11,7 @@ const userControllerRoutes= require('../controller/user/user.controller');
 const categoryRoutes= require('../controller/category/category');
 const productRoutes= require('../controller/product/product');
 const cartRoutes= require('../controller/cart/cart');
+const orderRoutes= require('../controller/order/orderController');
 
 
 //Environment Variable
@@ -60,6 +61,12 @@ mongoose.connect(
 }).catch(err => {
     console.log('Error connecting to MongoDB : ' + err);
 });
+
+app.get('/config/paypal', (req,res)=>
+{
+  res.send('AQGXewMSnYV7-2ok7rZG1DzitcY4xTXrDRrsUK38ReAssGJRlIT0r3YXC7YmW2cCAhEfkA3P44QdpbKU')
+})
+
 app.use(bodyParser.json());
 app.use("/", userRoutes);
 // app.use("/seller", sellerRoutes);
@@ -69,5 +76,6 @@ app.use("/product", productRoutes);
 app.use("/product:", productRoutes);
 
 app.use("/cart", cartRoutes);
+app.use("/order", orderRoutes);
 
 
