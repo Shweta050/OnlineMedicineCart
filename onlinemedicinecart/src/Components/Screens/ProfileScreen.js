@@ -32,9 +32,12 @@ const ProfileScreen = ({ location, history }) => {
 
   useEffect(() => {
     if (!userInfo) {
+      console.log('profile-login')
       navigate('/login')
     } else {
       if (!user || !user.name || success) {
+        console.log('profile-getuserdetails')
+
         dispatch({ type: USER_UPDATE_PROFILE_RESET })
         dispatch(getUserDetails('profile'))
         dispatch(listMyOrders())
@@ -43,7 +46,7 @@ const ProfileScreen = ({ location, history }) => {
         setEmail(user.email)
       }
     }
-  }, [dispatch, history, userInfo, user, success])
+  }, [navigate,dispatch, history, userInfo, user, success])
 
   const submitHandler = (e) => {
     e.preventDefault()

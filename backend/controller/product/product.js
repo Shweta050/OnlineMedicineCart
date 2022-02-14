@@ -101,10 +101,10 @@ const Product = require("../../models/productModel");
                   console.log("Product not found");
               }
               // contact.status = request.status;
-              product.quantity= Number(product.quantity) + Number(req.params.quant);
+              product.countInStock= Number(product.countInStock) + Number(req.params.quant);
               product.save(function(err) {
                   if(!err) {
-                      console.log("quantity " + product.quantity + " updated "+" -> "+product.name);
+                      console.log("quantity " + product.countInStock + " updated "+" -> "+product.name);
                       res.json("Successfully updated product " + product.name);
                   }
                   else {

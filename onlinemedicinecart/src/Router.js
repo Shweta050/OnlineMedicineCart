@@ -50,6 +50,7 @@ class Router extends Component {
                 <Route path="/sellerHome/sellerUpdateQuant" element={<SellerUpdateQuant/>} />
                 <Route path="/sellerHome/sellerUpdateQuant/product/:id" element={<QuantProductDetail/>} />
                 <Route path="/adminHome/blockProduct" element={<BlockProduct/>} />
+                <Route path="/adminHome/blockProduct/blockedProds/:name" element={<BlockedProds/>} />
                 <Route path="/product/search/:keyword" element={<SearchProducts/>}  />
                 <Route path='/shipping' element={<ShippingScreen/>} />
                 <Route path='/payment' element={<PaymentScreen/>} />
