@@ -6,7 +6,7 @@ import Router from './Router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { store } from './store';
+import  store  from './store';
 import history from './history'
 
 ReactDOM.render(
