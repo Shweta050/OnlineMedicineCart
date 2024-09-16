@@ -1,13 +1,18 @@
-import React, { Component,useEffect,useState } from 'react';
-import ReactDOM from 'react-dom';
-import {Route, withRouter} from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect,useState } from 'react';
+import { debounce } from "@mui/material";
+
 import 'bootstrap/dist/css/bootstrap.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-//
+import { useDispatch, useSelector } from "react-redux";
+import { setProductParams } from "./Catalog/CatalogSlice";
+
 //https://jsonplaceholder.typicode.com/users
 export default function Category(){
+
+    // const {productParams} = useSelector(state => state.catalog);
+    // const [categoryTerm, setCategory] = useState(productParams.category);
+    const dispatch = useDispatch();
 
     const [value,setValue]=useState('');
     const [result,getData]= useState([]);
@@ -27,6 +32,10 @@ export default function Category(){
       console.log(e);
       setValue(e)
     }
+
+    // const debouncedSearch = debounce((event) => {
+    //     dispatch(setProductParams({categoryTerm: event.target.value}))
+    // }, 1000)
     
     return( 
         <><DropdownButton
@@ -34,16 +43,19 @@ export default function Category(){
             title={"--"+value+"--"}
             id="dropdown-menu-align-right"
             onSelect={handleSelect}
+            onChange={(event) => {
+                // setCategory(event.target.value);
+            }}
         >
             {
                 result.map(items=>
                     {
                         return(
-                            <Dropdown.Item eventKey={items.name}>{items.name}</Dropdown.Item>
+                            <Dropdown.Item eventKey={items.name}>{items.value}</Dropdown.Item>
                         );
                 })
             }
-        </DropdownButton><h4>You selected {value}</h4></>
+        </DropdownButton><h4> {  value  }</h4></>
     );
   
 }
